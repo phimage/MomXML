@@ -1,0 +1,15 @@
+included:
+    - Sources
+
+# rule identifiers to exclude from running
+disabled_rules:
+    - cyclomatic_complexity
+    - large_tuple
+    - todo
+
+shorthand_operator: warning
+
+# configurable rules can be customized from this configuration file
+line_length:
+- 200
+- 250
