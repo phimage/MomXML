@@ -15,7 +15,8 @@ public struct MomUserInfo {
     public var isEmpty: Bool {
         return entries.isEmpty
     }
-
+    
+    public init() {}
 }
 
 public struct MomUserInfoEntry {
