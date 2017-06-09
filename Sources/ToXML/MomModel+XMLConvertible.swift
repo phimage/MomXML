@@ -30,5 +30,5 @@ extension MomModel: XMLConvertible {
         output += "</model>\n"
         return output
     }
-    
+
 }
