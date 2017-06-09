@@ -18,9 +18,9 @@ extension MomRelationship: XMLObject {
         self.init(name: name, destinationEntity: destinationEntity)
 
         self.syncable = xml.element?.attribute(by: "syncable")?.text.toBool ?? false
-        self.optional = xml.element?.attribute(by: "optional")?.text.toBool ?? false
-        self.toMany = xml.element?.attribute(by: "toMany")?.text.toBool ?? false
-        self.ordered = xml.element?.attribute(by: "ordered")?.text.toBool ?? false
+        self.isOptional = xml.element?.attribute(by: "optional")?.text.toBool ?? false
+        self.isToMany = xml.element?.attribute(by: "toMany")?.text.toBool ?? false
+        self.isOrdered = xml.element?.attribute(by: "ordered")?.text.toBool ?? false
 
         if let text = xml.element?.attribute(by: "ordered")?.text, let rule = DeletionRule(rawValue: text) {
             self.deletionRule = rule

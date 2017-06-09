@@ -15,8 +15,12 @@ public struct MomUserInfo {
     public var isEmpty: Bool {
         return entries.isEmpty
     }
-    
+
     public init() {}
+
+    public init(userInfo: [AnyHashable : Any]) {
+        entries = userInfo.map { MomUserInfoEntry(key: "\($0.key)", value: "\($0.value)") }
+    }
 }
 
 public struct MomUserInfoEntry {

@@ -33,6 +33,7 @@ class MomXMLTests: XCTestCase {
         let parsedMom = MomXML(xml: xml)
         XCTAssertNotNil(parsedMom)
 
+        /// XXX Before comparing maybe do an xmlLint or do a better xml compare
         XCTAssertEqual(parsedMom!.xml, xmlString)
     }
 

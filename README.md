@@ -1,20 +1,24 @@
 # MomXML
 
-Create or parse CoreData managed object model XMLs 
+Create or parse CoreData managed object model XMLs.
 
 ## Project description
 
 ### Model
 
-Contains `struct` objects which describe each XML elements
+Contains `struct` objects which describe each XML elements.
 
 ### ToXML
-Contains `struct` extensions to create XML string from `struct` objects
+Contains `struct` extensions to create XML string from `struct` objects.
 
 ### FromXML
 
-Contains `struct` extensions to create this `struct` objects using XML from `SWXMLHash` frameworks
+Contains `struct` extensions to create this `struct` objects using XML from `SWXMLHash` frameworks.
 
+### FromCoreData
+
+Contains CoreData extensions to create `struct` objects.
+So you can serialize in memory data model into xml.
 
 ## Setup
 
@@ -36,6 +40,6 @@ Execute
 carthage update --platform osx
 ```
 
-### Update project
+### Contribute
 - Fork
 - Make PR

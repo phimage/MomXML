@@ -15,16 +15,16 @@ public struct MomAttribute {
     public var maxValueString: String?
 
     public var syncable: Bool = true
-    public var optional: Bool = false
-    public var transient: Bool = false
-    public var indexed: Bool = true
+    public var isOptional: Bool = false
+    public var isTransient: Bool = false
+    public var isIndexed: Bool = true
     public var usesScalarValueType: Bool = false
 
-    public init(name: String, attributeType: AttributeType, optional: Bool = false, transient: Bool = false) {
+    public init(name: String, attributeType: AttributeType, isOptional: Bool = false, isTransient: Bool = false) {
         self.name = name
         self.attributeType = attributeType
-        self.optional = optional
-        self.transient = transient
+        self.isOptional = isOptional
+        self.isTransient = isTransient
     }
 
     public enum AttributeType: String {
@@ -39,6 +39,8 @@ public struct MomAttribute {
         case integer32 = "Integer 32"
         case integer64 = "Integer 64"
         case transformable = "Transformable"
+        case undefined = "Undefined"
+        case objectID = "ObjectID"
     }
 
 }

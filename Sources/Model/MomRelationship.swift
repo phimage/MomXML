@@ -9,10 +9,10 @@ public struct MomRelationship {
     var userInfo = MomUserInfo()
 
     var name: String
-    var optional: Bool
-    var ordered: Bool
+    var isOptional: Bool
+    var isOrdered: Bool
 
-    var toMany: Bool
+    var isToMany: Bool
     var maxCount: Int?
     var minCount: Int?
 
@@ -25,11 +25,11 @@ public struct MomRelationship {
     var inverseName: String?
     var inverseEntity: String?
 
-    public init(name: String, destinationEntity: String, toMany: Bool = false, ordered: Bool = false, optional: Bool = false) {
+    public init(name: String, destinationEntity: String, isToMany: Bool = false, isOrdered: Bool = false, isOptional: Bool = false) {
         self.name = name
-        self.toMany = toMany
-        self.ordered = ordered
-        self.optional = optional
+        self.isToMany = isToMany
+        self.isOrdered = isOrdered
+        self.isOptional = isOptional
         self.destinationEntity = destinationEntity
     }
 

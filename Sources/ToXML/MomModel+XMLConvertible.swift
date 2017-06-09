@@ -17,15 +17,18 @@ extension MomModel: XMLConvertible {
             output += "\n"
         }
 
-        output += " <elements>\n"
-        for element in elements {
-            output += element.xml
-            output += "\n"
+        if elements.isEmpty {
+            output += "<elements/>"
+        } else {
+            output += " <elements>\n"
+            for element in elements {
+                output += element.xml
+                output += "\n"
+            }
+            output += " </elements>\n"
         }
-        output += " </elements>\n"
-
         output += "</model>\n"
         return output
     }
-
+    
 }

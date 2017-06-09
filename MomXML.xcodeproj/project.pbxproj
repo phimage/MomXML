@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482BE8DB1EE9532800BFD423 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8D91EE9532800BFD423 /* Model.xcdatamodeld */; };
+		482BE8ED1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8EC1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift */; };
+		482BE8EF1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8EE1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift */; };
+		482BE8F11EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8F01EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift */; };
+		482BE8F31EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8F21EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift */; };
 		484F8E561EE81D8900C854AA /* MomXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484F8E4C1EE81D8800C854AA /* MomXML.framework */; };
 		484F8E5B1EE81D8900C854AA /* MomXMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E5A1EE81D8900C854AA /* MomXMLTests.swift */; };
 		484F8E5D1EE81D8900C854AA /* MomXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 484F8E4F1EE81D8800C854AA /* MomXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		482BE8DA1EE9532800BFD423 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		482BE8EC1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSEntityDescription+MomXML.swift"; sourceTree = "<group>"; };
+		482BE8EE1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectModel+MomXML.swift"; sourceTree = "<group>"; };
+		482BE8F01EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributeDescription+MomXML.swift"; sourceTree = "<group>"; };
+		482BE8F21EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRelationshipDescription+MomXML.swift"; sourceTree = "<group>"; };
 		484F8E4C1EE81D8800C854AA /* MomXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MomXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		484F8E4F1EE81D8800C854AA /* MomXML.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomXML.h; sourceTree = "<group>"; };
 		484F8E501EE81D8900C854AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482BE8EB1EEA8D5C00BFD423 /* FromCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				482BE8EE1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift */,
+				482BE8EC1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift */,
+				482BE8F01EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift */,
+				482BE8F21EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift */,
+			);
+			path = FromCoreData;
+			sourceTree = "<group>";
+		};
 		484F8E421EE81D8800C854AA = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +147,7 @@
 			children = (
 				484F8E5A1EE81D8900C854AA /* MomXMLTests.swift */,
 				484F8E5C1EE81D8900C854AA /* Info.plist */,
+				482BE8D91EE9532800BFD423 /* Model.xcdatamodeld */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -145,6 +167,7 @@
 				484F8E7D1EE8234500C854AA /* Model */,
 				484F8E7E1EE8235500C854AA /* ToXML */,
 				484F8E8C1EE8253B00C854AA /* FromXML */,
+				482BE8EB1EEA8D5C00BFD423 /* FromCoreData */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -359,7 +382,9 @@
 				484F8E701EE81E2B00C854AA /* MomElement.swift in Sources */,
 				484F8E6F1EE81E2B00C854AA /* MomAttribute.swift in Sources */,
 				484F8EAC1EE8350400C854AA /* MomXML+XMLConvertible.swift in Sources */,
+				482BE8ED1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift in Sources */,
 				484F8EA51EE82AAC00C854AA /* MomRelationship+XMLObject.swift in Sources */,
+				482BE8F11EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift in Sources */,
 				484F8E711EE81E2B00C854AA /* MomEntity.swift in Sources */,
 				484F8E8E1EE8256300C854AA /* XMLObject.swift in Sources */,
 				484F8E741EE81E2B00C854AA /* MomUserInfo.swift in Sources */,
@@ -371,11 +396,13 @@
 				484F8EA31EE82AAC00C854AA /* MomEntity+XMLObject.swift in Sources */,
 				484F8EA41EE82AAC00C854AA /* MomModel+XMLObject.swift in Sources */,
 				484F8EAA1EE834C500C854AA /* MomXML.swift in Sources */,
+				482BE8EF1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift in Sources */,
 				484F8EA21EE82AAC00C854AA /* MomElement+XMLObject.swift in Sources */,
 				484F8EAE1EE8355600C854AA /* MomXML+XMLObject.swift in Sources */,
 				484F8E861EE823E300C854AA /* MomElement+XMLConvertible.swift in Sources */,
 				484F8E851EE823E300C854AA /* MomAttribute+XMLConvertible.swift in Sources */,
 				484F8EA61EE82AAC00C854AA /* MomUserInfo+XMLObject.swift in Sources */,
+				482BE8F31EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift in Sources */,
 				484F8E721EE81E2B00C854AA /* MomModel.swift in Sources */,
 				484F8E8A1EE823E300C854AA /* MomUserInfo+XMLConvertible.swift in Sources */,
 			);
@@ -386,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				484F8E5B1EE81D8900C854AA /* MomXMLTests.swift in Sources */,
+				482BE8DB1EE9532800BFD423 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +634,7 @@
 				484F8E621EE81D8900C854AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		484F8E631EE81D8900C854AA /* Build configuration list for PBXNativeTarget "MomXMLTests" */ = {
 			isa = XCConfigurationList;
@@ -614,8 +643,22 @@
 				484F8E651EE81D8900C854AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		482BE8D91EE9532800BFD423 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				482BE8DA1EE9532800BFD423 /* Model.xcdatamodel */,
+			);
+			currentVersion = 482BE8DA1EE9532800BFD423 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 484F8E431EE81D8800C854AA /* Project object */;
 }

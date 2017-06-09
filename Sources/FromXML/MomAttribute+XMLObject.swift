@@ -17,10 +17,10 @@ extension MomAttribute: XMLObject {
         }
         self.init(name: name, attributeType: attributeType)
 
-        self.optional = xml.element?.attribute(by: "optional")?.text.toBool ?? false
+        self.isOptional = xml.element?.attribute(by: "optional")?.text.toBool ?? false
         self.usesScalarValueType = xml.element?.attribute(by: "usesScalarValueType")?.text.toBool ?? false
-        self.indexed = xml.element?.attribute(by: "indexed")?.text.toBool ?? false
-        self.transient = xml.element?.attribute(by: "transient")?.text.toBool ?? false
+        self.isIndexed = xml.element?.attribute(by: "indexed")?.text.toBool ?? false
+        self.isTransient = xml.element?.attribute(by: "transient")?.text.toBool ?? false
         self.syncable = xml.element?.attribute(by: "syncable")?.text.toBool ?? false
 
         self.defaultValueString = xml.element?.attribute(by: "defaultValueString")?.text
