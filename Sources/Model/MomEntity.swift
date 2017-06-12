@@ -26,3 +26,16 @@ public struct MomEntity {
     // TODO MomCompoundIndex
     // TODO MomUniquenessConstraint
 }
+
+public struct MomEntityEntry {
+    
+    public var name: String
+    var attributes: [MomAttribute] = []
+    var relationship: [MomRelationship] = []
+}
+
+extension MomEntityEntry: Equatable {
+    public static func == (lhs: MomEntityEntry, rhs: MomEntityEntry) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
