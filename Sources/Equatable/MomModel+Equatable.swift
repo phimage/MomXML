@@ -9,31 +9,25 @@
 import Foundation
 
 
-/*extension MomModel: Equatable {
+extension MomModel: Equatable {
     
-    /*public static func == (lhs: MomEntity, rhs: MomEntity) -> Bool {
-        if (lhs.name == rhs.name){
-            if lhs.attributes.count != rhs.attributes.count {
-                return false
-            }
-            if lhs.relationship.count != rhs.relationship.count {
-                return false
-            }
-            
-            for entry in lhs.attributes {
-                for entry2 in rhs.attributes where entry2 != entry {
-                    return false
-                }
-            }
-            for entry in lhs.relationship {
-                for entry2 in rhs.relationship where entry2 == entry {
-                    return false
-                }
-            }
-            
-            return true
+    public static func == (lhs: MomModel, rhs: MomModel) -> Bool {
+        if lhs.entities.count != rhs.entities.count {
+            return false
         }
-        return false
-    }*/
+        if lhs.elements.count != rhs.elements.count {
+            return false
+        }
+        for entry in lhs.entities {
+            for entry2 in rhs.entities where entry2 != entry {
+                return false
+            }
+        }
+        for entry in lhs.elements {
+            for entry2 in rhs.elements where entry2 != entry {
+                return false
+            }
+        }
+        return true
+    }
 }
-*/
