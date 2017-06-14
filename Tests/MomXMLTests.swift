@@ -206,4 +206,78 @@ class MomXMLTests: XCTestCase {
         momXML.model.elements.append(elementClient)
         XCTAssertEqual(momXML == momXML, true)
     }
+    
+    func testXMLToMomModel1() {
+        if let url = Bundle(for: MomXMLTests.self).url(forResource: "model", withExtension: "xml") {
+            do {
+                let xmlString = try String(contentsOf: url)
+                let xml = SWXMLHash.parse(xmlString)
+                let parsedMom = MomXML(xml: xml) as! MomXML
+                let momModel = parsedMom.model as! MomModel
+                //print(xml)
+                //print("++++++++")
+                //print(momModel.xml)
+                let momEntities = momModel.entities
+                let momElements = momModel.elements
+                var entites: [MomEntity] = []
+                var elements: [MomElement] = []
+                
+                for entity in momEntities {
+                    entites.append(entity)
+                    print(entity.name)
+                    for attr in entity.attributes {
+                        print("\(attr.name)  \(attr.attributeType)")
+                    }
+                    for attr in entity.relationship {
+                        print("\(attr.name)  \(attr.destinationEntity)")
+                    }
+                }
+                
+                for element in momElements {
+                    elements.append(element)
+                    print(element.name)
+                }
+                XCTAssertEqual(momEntities.count, momElements.count)
+            } catch {
+                XCTFail("Unable to read test file Model \(error)")
+            }
+        } else {
+            XCTFail("Unable to get test file Model")
+        }
+    }
+    func testXMLToMomModel2() {
+        if let url = Bundle(for: MomXMLTests.self).url(forResource: "model2", withExtension: "xml") {
+            do {
+                let xmlString = try String(contentsOf: url)
+                let xml = SWXMLHash.parse(xmlString)
+                let parsedMom = MomXML(xml: xml) as! MomXML
+                let momModel = parsedMom.model as! MomModel
+                let momEntities = momModel.entities
+                let momElements = momModel.elements
+                var entites: [MomEntity] = []
+                var elements: [MomElement] = []
+                
+                for entity in momEntities {
+                    entites.append(entity)
+                    print(entity.name)
+                    for attr in entity.attributes {
+                        print("\(attr.name)  \(attr.attributeType)")
+                    }
+                    for attr in entity.relationship {
+                        print("\(attr.name)  \(attr.destinationEntity)")
+                    }
+                }
+                print("+++ elements :")
+                for element in momElements {
+                    elements.append(element)
+                    print(element.name)
+                }
+                XCTAssertEqual(momEntities.count, momElements.count)
+            } catch {
+                XCTFail("Unable to read test file Model \(error)")
+            }
+        } else {
+            XCTFail("Unable to get test file Model")
+        }
+    }
 }
