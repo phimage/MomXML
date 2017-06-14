@@ -20,8 +20,12 @@ extension MomModel: XMLObject {
         for xml in xml.children {
             if let entity = MomEntity(xml: xml) {
                 self.entities.append(entity)
-            } else if let element = MomElement(xml: xml) {
-                self.elements.append(element)
+            } else if xml.element?.name == "elements" {
+                for xml in xml.children {
+                    if let element = MomElement(xml: xml) {
+                        self.elements.append(element)
+                    }
+                }
             }
         }
     }
