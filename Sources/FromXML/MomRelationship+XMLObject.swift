@@ -26,8 +26,8 @@ extension MomRelationship: XMLObject {
             self.deletionRule = rule
         }
 
-        self.maxCount = xml.element?.attribute(by: "minCount")?.text.toInt
-        self.minCount = xml.element?.attribute(by: "maxCount")?.text.toInt
+        self.maxCount = xml.element?.attribute(by: "maxCount")?.text.toInt
+        self.minCount = xml.element?.attribute(by: "minCount")?.text.toInt
 
         self.inverseName = xml.element?.attribute(by: "inverseName")?.text
         self.inverseEntity = xml.element?.attribute(by: "inverseEntity")?.text

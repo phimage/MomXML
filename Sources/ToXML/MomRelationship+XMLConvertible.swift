@@ -9,10 +9,10 @@ extension MomRelationship: XMLConvertible {
     public var xml: String {
         var output = "<relationship name=\"\(name)\" optional=\"\(isOptional.xml)\" toMany=\"\(isToMany.xml)\" ordered=\"\(isOrdered.xml)\" deletionRule=\"\(deletionRule.xml)\""
         if let maxCount = maxCount {
-            output += " maxCount=\(maxCount)"
+            output += " maxCount=\"\(maxCount)\""
         }
         if let minCount = minCount {
-            output += " minCount=\(minCount)"
+            output += " minCount=\"\(minCount)\""
         }
         output += " destinationEntity=\"\(destinationEntity)\""
 
