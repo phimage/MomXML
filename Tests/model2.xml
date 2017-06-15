@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3389" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Bar" representedClassName="Bar" syncable="YES" codeGenerationType="class">
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="CurrentProgram" representedClassName="CurrentProgram" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FTOAssistance" representedClassName="FTOAssistance" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FTOLift" representedClassName="FTOLift" parentEntity="Lift" syncable="YES" codeGenerationType="class"/>
+    <entity name="FTOSet" representedClassName="FTOSet" parentEntity="Set" syncable="YES" codeGenerationType="class"/>
+    <entity name="FTOSettings" representedClassName="FTOSettings" syncable="YES" codeGenerationType="class">
+        <attribute name="trainingMax" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="FTOVariant" representedClassName="FTOVariant" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="FTOWorkout" representedClassName="FTOWorkout" syncable="YES" codeGenerationType="class">
+        <attribute name="done" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="week" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Lift" representedClassName="Lift" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="increment" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="usesBar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Plate" representedClassName="Plate" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Set" representedClassName="Set" syncable="YES" codeGenerationType="class">
+        <attribute name="amrap" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="maxReps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="optional" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="percentage" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="warmup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="lift" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Lift" syncable="YES"/>
+    </entity>
+    <entity name="SetLog" representedClassName="SetLog" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="warmup" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+    </entity>
+    <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
+        <attribute name="roundTo" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="units" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SSLift" representedClassName="SSLift" parentEntity="Lift" syncable="YES" codeGenerationType="class"/>
+    <entity name="SSState" representedClassName="SSState" syncable="YES" codeGenerationType="class">
+        <attribute name="workoutAAlternation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="lastWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SSWorkout" syncable="YES"/>
+    </entity>
+    <entity name="SSVariant" representedClassName="SSVariant" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SSWorkout" representedClassName="SSWorkout" syncable="YES" codeGenerationType="class">
+        <attribute name="alternation" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="workouts" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES" codeGenerationType="class">
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutLog" representedClassName="WorkoutLog" syncable="YES" codeGenerationType="class">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SetLog" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Bar" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CurrentProgram" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOAssistance" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOLift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOSet" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOSettings" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOVariant" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FTOWorkout" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Lift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Plate" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Set" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SetLog" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Settings" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSLift" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSState" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSVariant" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="SSWorkout" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Workout" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="WorkoutLog" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

@@ -7,7 +7,7 @@ import Foundation
 extension MomRelationship: XMLConvertible {
 
     public var xml: String {
-        var output = "<relationship name=\"\(name)\" optional=\"\(isOptional.xml) toMany=\"\(isToMany.xml) ordered=\"\(isOrdered.xml) deletionRule=\"\(deletionRule.xml)\""
+        var output = "<relationship name=\"\(name)\" optional=\"\(isOptional.xml)\" toMany=\"\(isToMany.xml)\" ordered=\"\(isOrdered.xml)\" deletionRule=\"\(deletionRule.xml)\""
         if let maxCount = maxCount {
             output += " maxCount=\(maxCount)"
         }
@@ -20,7 +20,7 @@ extension MomRelationship: XMLConvertible {
             output += " inverseName=\"\(inverseName)\" inverseEntity=\"\(inverseEntity)\""
         }
 
-        output += "syncable=\"\(syncable.xml)\""
+        output += " syncable=\"\(syncable.xml)\""
 
         if userInfo.isEmpty {
             output += "/>"
