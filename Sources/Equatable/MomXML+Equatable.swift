@@ -10,9 +10,6 @@ import Foundation
 
 extension MomXML: Equatable {
     public static func == (lhs: MomXML, rhs: MomXML) -> Bool {
-        if lhs.model != rhs.model {
-            return false
-        }
-        return true
+        return lhs.model == rhs.model
     }
 }

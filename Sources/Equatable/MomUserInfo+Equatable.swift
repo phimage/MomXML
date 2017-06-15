@@ -14,22 +14,7 @@ extension MomUserInfo: Equatable {
         if lhs.entries.count != rhs.entries.count {
             return false
         }
-        // compare
-        for entry in lhs.entries {
-            var found = false
-            for entry2 in rhs.entries where entry2.key == entry.key {
-                    if entry2.value != entry.value {
-                        return false
-                    }
-                    found = true
-                    break
-            }
-            if !found {
-                return false
-            }
-        }
-
-        return true
+        return lhs.entries.sorted { $0.key < $1.key } == rhs.entries.sorted { $0.key < $1.key }
     }
 }
 

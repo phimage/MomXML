@@ -17,16 +17,7 @@ extension MomModel: Equatable {
         if lhs.elements.count != rhs.elements.count {
             return false
         }
-        for entry in lhs.entities {
-            for entry2 in rhs.entities where entry2 != entry {
-                return false
-            }
-        }
-        for entry in lhs.elements {
-            for entry2 in rhs.elements where entry2 != entry {
-                return false
-            }
-        }
-        return true
+        return lhs.entities.sorted { $0.name < $1.name } == rhs.entities.sorted { $0.name < $1.name } &&
+            lhs.elements.sorted { $0.name < $1.name } == rhs.elements.sorted { $0.name < $1.name }
     }
 }
