@@ -9,7 +9,7 @@
 import Foundation
 
 extension MomEntity: Equatable {
-    
+
     public static func == (lhs: MomEntity, rhs: MomEntity) -> Bool {
         if  lhs.name == rhs.name {
             if lhs.attributes.count != rhs.attributes.count {

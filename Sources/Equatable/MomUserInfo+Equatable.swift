@@ -28,11 +28,10 @@ extension MomUserInfo: Equatable {
                 return false
             }
         }
-        
+
         return true
     }
 }
-
 
 extension MomUserInfoEntry: Equatable {
     public static func == (lhs: MomUserInfoEntry, rhs: MomUserInfoEntry) -> Bool {

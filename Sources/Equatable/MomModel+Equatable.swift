@@ -8,9 +8,8 @@
 
 import Foundation
 
-
 extension MomModel: Equatable {
-    
+
     public static func == (lhs: MomModel, rhs: MomModel) -> Bool {
         if lhs.entities.count != rhs.entities.count {
             return false

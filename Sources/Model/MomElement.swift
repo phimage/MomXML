@@ -19,5 +19,5 @@ public struct MomElement {
         self.width = width
         self.height = height
     }
-    
+
 }

@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension MomRelationship: Equatable {
     public static func == (lhs: MomRelationship, rhs: MomRelationship) -> Bool {
         return lhs.name == rhs.name && lhs.isToMany == rhs.isToMany && lhs.isOrdered == rhs.isOrdered && lhs.isOptional == rhs.isOptional && lhs.destinationEntity == rhs.destinationEntity

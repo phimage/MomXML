@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 extension MomElement: Equatable {
     public static func == (lhs: MomElement, rhs: MomElement) -> Bool {
         return lhs.name == rhs.name && lhs.positionX == rhs.positionX && lhs.positionY == rhs.positionY && lhs.width == rhs.width && lhs.height == rhs.height
