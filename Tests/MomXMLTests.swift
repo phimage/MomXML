@@ -173,47 +173,101 @@ class MomXMLTests: XCTestCase {
         XCTAssertNotNil(parsedMom)
     }
     
-    func testEquatable (){
+    func testEquatableAttribute(){
         //attribut
-        let attrName = MomAttribute.init(name: "name", attributeType: MomAttribute.AttributeType.string)
-        XCTAssertEqual(attrName == attrName, true)
+        let attrName = MomAttribute(name: "name", attributeType: .string)
+        XCTAssertEqual(attrName, attrName)
+        XCTAssertEqual(attrName, MomAttribute(name: "name", attributeType: .string))
+        
+        
+        XCTAssertNotEqual(attrName, MomAttribute(name: "name", attributeType: .integer16), "attributeType different")
+        XCTAssertNotEqual(attrName, MomAttribute(name: "name2", attributeType: .string), "name different")
+        
+        
+        XCTAssertNotEqual(attrName, MomAttribute(name: "name", attributeType: .string, isOptional: true), "isOptional different")
+    }
+    
+    func testEquatableElement(){
         //elements
-        let elementClient = MomElement.init(name: "Client", positionX: 106, positionY: -45, width: 128, height: 118)
-        XCTAssertEqual(elementClient == elementClient, true)
+        let elementClient = MomElement(name: "Client", positionX: 106, positionY: -45, width: 128, height: 118)
+        XCTAssertEqual(elementClient, elementClient)
+        XCTAssertEqual(elementClient, MomElement(name: "Client", positionX: 106, positionY: -45, width: 128, height: 118))
+        
+        
+        XCTAssertNotEqual(elementClient, MomElement(name: "Client2", positionX: 106, positionY: -45, width: 128, height: 118), "name different")
+        XCTAssertNotEqual(elementClient, MomElement(name: "Client", positionX: 588, positionY: -45, width: 128, height: 118), "positionX different")
+        XCTAssertNotEqual(elementClient, MomElement(name: "Client", positionX: 106, positionY: 454, width: 128, height: 118), "positionY different")
+        XCTAssertNotEqual(elementClient, MomElement(name: "Client", positionX: 106, positionY: -45, width: 44, height: 118), "width different")
+        XCTAssertNotEqual(elementClient, MomElement(name: "Client", positionX: 106, positionY: -45, width: 128, height: 1), "height different")
+    }
+
+    func testEquatableRelationship(){
         //relationship
-        let myrelationshipProduit = MomRelationship.init(name: "produit_commande", destinationEntity: "Commande")
-        XCTAssertEqual(myrelationshipProduit == myrelationshipProduit, true)
+        let myrelationshipProduit = MomRelationship(name: "produit_commande", destinationEntity: "Commande")
+        XCTAssertEqual(myrelationshipProduit, myrelationshipProduit)
+        XCTAssertEqual(myrelationshipProduit, MomRelationship(name: "produit_commande", destinationEntity: "Commande"))
+        
+        
+        XCTAssertNotEqual(myrelationshipProduit, MomRelationship(name: "produit_command", destinationEntity: "Commande"), "name different")
+
+        var myrelationshipProduit2 = MomRelationship(name: "produit_commande", destinationEntity: "Commande")
+        myrelationshipProduit2.deletionRule = .deny
+        XCTAssertNotEqual(myrelationshipProduit2, myrelationshipProduit, "deletionRule different")
+    }
+
+    func testEquatable(){
         //entity
         var entityClient = MomEntity(name: "Client")
-        let attrFirstName = MomAttribute.init(name: "firstname", attributeType: MomAttribute.AttributeType.string)
-        let attrlastName = MomAttribute.init(name: "lastname", attributeType: MomAttribute.AttributeType.string)
-        let attrIdClient = MomAttribute.init(name: "id", attributeType: MomAttribute.AttributeType.integer16)
+        let attrFirstName = MomAttribute(name: "firstname", attributeType: .string)
+        let attrlastName = MomAttribute(name: "lastname", attributeType: .string)
+        let attrIdClient = MomAttribute(name: "id", attributeType: .integer16)
         entityClient.attributes.append(attrFirstName)
         entityClient.attributes.append(attrlastName)
         entityClient.attributes.append(attrIdClient)
         entityClient.userInfo.add(key: "name1", value: "valuename1")
-        let myrelationshipClient = MomRelationship.init(name: "client_commande", destinationEntity: "Commande")
+        let myrelationshipClient = MomRelationship(name: "client_commande", destinationEntity: "Commande")
         entityClient.relationship.append(myrelationshipClient)
-        XCTAssertEqual(entityClient == entityClient, true)
+        XCTAssertEqual(entityClient, entityClient)
+
         //model
         var momModel = MomModel()
         momModel.entities.append(entityClient)
+        let elementClient = MomElement(name: "Client", positionX: 106, positionY: -45, width: 128, height: 118)
         momModel.elements.append(elementClient)
-        XCTAssertEqual(momModel == momModel, true)
+        XCTAssertEqual(momModel, momModel)
         //MomXML
         var momXML = MomXML()
         momXML.model.entities.append(entityClient)
         momXML.model.elements.append(elementClient)
-        XCTAssertEqual(momXML == momXML, true)
+        XCTAssertEqual(momXML, momXML)
+        
+        
+        var momXML2 = MomXML()
+        momXML2.model.entities.append(entityClient)
+        momXML2.model.elements.append(elementClient)
+        XCTAssertEqual(momXML, momXML2)
+        
+        let momXML3 = MomXML()
+        XCTAssertNotEqual(momXML3, momXML)
+
+        let momXML4 = MomXML()
+        momXML2.model.entities.append(MomEntity(name: "Client4"))
+        momXML2.model.elements.append(MomElement(name: "Client4", positionX: 106, positionY: -45, width: 128, height: 118))
+        XCTAssertNotEqual(momXML4, momXML)
     }
+    
+    // MARK: test from files
     
     func testXMLToMomModel1() {
         if let url = Bundle(for: MomXMLTests.self).url(forResource: "model", withExtension: "xml") {
             do {
                 let xmlString = try String(contentsOf: url)
                 let xml = SWXMLHash.parse(xmlString)
-                let parsedMom = MomXML(xml: xml) as! MomXML
-                let momModel = parsedMom.model as! MomModel
+                guard let parsedMom = MomXML(xml: xml) else {
+                    XCTFail("Failed to parse xml")
+                    return
+                }
+                let momModel = parsedMom.model
                 //print(xml)
                 //print("++++++++")
                 //print(momModel.xml)
@@ -238,6 +292,13 @@ class MomXMLTests: XCTestCase {
                     print(element.name)
                 }
                 XCTAssertEqual(momEntities.count, momElements.count)
+
+                /// Important test, check that rendered data it's same as parsed data
+                let xmlFromParsed = parsedMom.xml
+                // print(xmlFromParsed)
+                let recreatedMom = MomXML(xml: SWXMLHash.parse(xmlFromParsed))
+                XCTAssertEqual(recreatedMom, parsedMom)
+                
             } catch {
                 XCTFail("Unable to read test file Model \(error)")
             }
@@ -250,8 +311,11 @@ class MomXMLTests: XCTestCase {
             do {
                 let xmlString = try String(contentsOf: url)
                 let xml = SWXMLHash.parse(xmlString)
-                let parsedMom = MomXML(xml: xml) as! MomXML
-                let momModel = parsedMom.model as! MomModel
+                guard let parsedMom = MomXML(xml: xml) else {
+                    XCTFail("Failed to parse xml")
+                    return
+                }
+                let momModel = parsedMom.model
                 let momEntities = momModel.entities
                 let momElements = momModel.elements
                 var entites: [MomEntity] = []
@@ -273,6 +337,12 @@ class MomXMLTests: XCTestCase {
                     print(element.name)
                 }
                 XCTAssertEqual(momEntities.count, momElements.count)
+                
+                /// Important test, check that rendered data it's same as parsed data
+                let xmlFromParsed = parsedMom.xml
+                // print(xmlFromParsed)
+                let recreatedMom = MomXML(xml: SWXMLHash.parse(xmlFromParsed))
+                XCTAssertEqual(recreatedMom, parsedMom)
             } catch {
                 XCTFail("Unable to read test file Model \(error)")
             }
@@ -286,8 +356,11 @@ class MomXMLTests: XCTestCase {
             do {
                 let xmlString = try String(contentsOf: url)
                 let xml = SWXMLHash.parse(xmlString)
-                let parsedMom = MomXML(xml: xml) as! MomXML
-                let momModel = parsedMom.model as! MomModel
+                guard let parsedMom = MomXML(xml: xml) else {
+                    XCTFail("Failed to parse xml")
+                    return
+                }
+                let momModel = parsedMom.model
                 let momEntities = momModel.entities
                 let momElements = momModel.elements
                 var entites: [MomEntity] = []
@@ -309,6 +382,12 @@ class MomXMLTests: XCTestCase {
                     print(element.name)
                 }
                 XCTAssertEqual(momEntities.count, momElements.count)
+                
+                /// Important test, check that rendered data it's same as parsed data
+                let xmlFromParsed = parsedMom.xml
+                // print(xmlFromParsed)
+                let recreatedMom = MomXML(xml: SWXMLHash.parse(xmlFromParsed))
+                XCTAssertEqual(recreatedMom, parsedMom)
             } catch {
                 XCTFail("Unable to read test file Model \(error)")
             }
