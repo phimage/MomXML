@@ -8,17 +8,38 @@ Create or parse CoreData managed object model XMLs.
 
 Contains `struct` objects which describe each XML elements.
 
+```swift
+var momXML = MomXML()
+let entityStatus = MomEntity(name: "Status")
+momXML.model.entities.append(entityStatus)
+let elementStatus = MomElement(name: "Status")
+momXML.model.elements.append(elementStatus)
+```
+
 ### ToXML
 Contains `struct` extensions to create XML string from `struct` objects.
+
+```swift
+let string = momXML.xml
+```
 
 ### FromXML
 
 Contains `struct` extensions to create this `struct` objects using XML from `SWXMLHash` frameworks.
 
+```swift
+let xmlString = ... // from file or string
+let mom = MomXML(xml: SWXMLHash.parse(xmlString))
+```
+
 ### FromCoreData
 
 Contains CoreData extensions to create `struct` objects.
 So you can serialize in memory data model into xml.
+
+### Equatable
+
+Contains extensions to make model objects `Equatable`.
 
 ## Setup
 
