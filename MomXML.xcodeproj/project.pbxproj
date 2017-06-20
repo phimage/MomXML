@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481601201EF8155E0051BD89 /* MomXml+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4816011F1EF8155E0051BD89 /* MomXml+CoreData.swift */; };
+		481601221EF81C590051BD89 /* MomAttribute+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601211EF81C590051BD89 /* MomAttribute+CoreData.swift */; };
+		481601241EF81C790051BD89 /* MomModel+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601231EF81C790051BD89 /* MomModel+CoreData.swift */; };
+		481601261EF81C9D0051BD89 /* MomEntity+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601251EF81C9D0051BD89 /* MomEntity+CoreData.swift */; };
+		481601281EF81CB70051BD89 /* MomRelationship+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601271EF81CB70051BD89 /* MomRelationship+CoreData.swift */; };
+		4816012A1EF81CFC0051BD89 /* MomUserInfo+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601291EF81CFC0051BD89 /* MomUserInfo+CoreData.swift */; };
 		482BE8DB1EE9532800BFD423 /* Model.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 482BE8D91EE9532800BFD423 /* Model.xcdatamodeld */; };
 		482BE8ED1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8EC1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift */; };
 		482BE8EF1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8EE1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift */; };
@@ -47,11 +53,8 @@
 		897B743C1EEED66B000E6560 /* MomElement+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897B743B1EEED66B000E6560 /* MomElement+Equatable.swift */; };
 		897B743E1EEED6B3000E6560 /* MomModel+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897B743D1EEED6B3000E6560 /* MomModel+Equatable.swift */; };
 		897B74401EEED732000E6560 /* MomXML+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897B743F1EEED732000E6560 /* MomXML+Equatable.swift */; };
-		897B74421EF00C46000E6560 /* model.xml in Resources */ = {isa = PBXBuildFile; fileRef = 897B74411EF00C46000E6560 /* model.xml */; };
 		897B74431EF00DE6000E6560 /* model.xml in Resources */ = {isa = PBXBuildFile; fileRef = 897B74411EF00C46000E6560 /* model.xml */; };
-		897B74451EF13FB8000E6560 /* model2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 897B74441EF13FB8000E6560 /* model2.xml */; };
 		897B74461EF140C9000E6560 /* model2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 897B74441EF13FB8000E6560 /* model2.xml */; };
-		897B74481EF17FA2000E6560 /* modelJsonToXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 897B74471EF17FA2000E6560 /* modelJsonToXML.xml */; };
 		897B74491EF18007000E6560 /* modelJsonToXML.xml in Resources */ = {isa = PBXBuildFile; fileRef = 897B74471EF17FA2000E6560 /* modelJsonToXML.xml */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4816011F1EF8155E0051BD89 /* MomXml+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomXml+CoreData.swift"; sourceTree = "<group>"; };
+		481601211EF81C590051BD89 /* MomAttribute+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomAttribute+CoreData.swift"; sourceTree = "<group>"; };
+		481601231EF81C790051BD89 /* MomModel+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomModel+CoreData.swift"; sourceTree = "<group>"; };
+		481601251EF81C9D0051BD89 /* MomEntity+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomEntity+CoreData.swift"; sourceTree = "<group>"; };
+		481601271EF81CB70051BD89 /* MomRelationship+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomRelationship+CoreData.swift"; sourceTree = "<group>"; };
+		481601291EF81CFC0051BD89 /* MomUserInfo+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomUserInfo+CoreData.swift"; sourceTree = "<group>"; };
 		482BE8DA1EE9532800BFD423 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		482BE8EC1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSEntityDescription+MomXML.swift"; sourceTree = "<group>"; };
 		482BE8EE1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectModel+MomXML.swift"; sourceTree = "<group>"; };
@@ -135,6 +144,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4816011E1EF815370051BD89 /* ToCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4816011F1EF8155E0051BD89 /* MomXml+CoreData.swift */,
+				481601231EF81C790051BD89 /* MomModel+CoreData.swift */,
+				481601251EF81C9D0051BD89 /* MomEntity+CoreData.swift */,
+				481601211EF81C590051BD89 /* MomAttribute+CoreData.swift */,
+				481601271EF81CB70051BD89 /* MomRelationship+CoreData.swift */,
+				481601291EF81CFC0051BD89 /* MomUserInfo+CoreData.swift */,
+			);
+			path = ToCoreData;
+			sourceTree = "<group>";
+		};
 		482BE8EB1EEA8D5C00BFD423 /* FromCoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,12 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				484F8E5A1EE81D8900C854AA /* MomXMLTests.swift */,
-				897B74441EF13FB8000E6560 /* model2.xml */,
 				484F8E5C1EE81D8900C854AA /* Info.plist */,
 				482BE8D91EE9532800BFD423 /* Model.xcdatamodeld */,
 				897B744A1EF18117000E6560 /* TestProduit.xcdatamodeld */,
-				897B74411EF00C46000E6560 /* model.xml */,
-				897B74471EF17FA2000E6560 /* modelJsonToXML.xml */,
+				485493DD1EF2B5BC00FDD396 /* Resources */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -192,10 +212,11 @@
 		484F8E671EE81DED00C854AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				897B74321EEED40E000E6560 /* Equatable */,
 				484F8E7D1EE8234500C854AA /* Model */,
+				897B74321EEED40E000E6560 /* Equatable */,
 				484F8E7E1EE8235500C854AA /* ToXML */,
 				484F8E8C1EE8253B00C854AA /* FromXML */,
+				4816011E1EF815370051BD89 /* ToCoreData */,
 				482BE8EB1EEA8D5C00BFD423 /* FromCoreData */,
 			);
 			path = Sources;
@@ -222,11 +243,11 @@
 			children = (
 				484F8EA91EE834C500C854AA /* MomXML.swift */,
 				484F8E6B1EE81E2B00C854AA /* MomModel.swift */,
-				484F8E691EE81E2B00C854AA /* MomElement.swift */,
+				484F8E6A1EE81E2B00C854AA /* MomEntity.swift */,
 				484F8E681EE81E2B00C854AA /* MomAttribute.swift */,
+				484F8E691EE81E2B00C854AA /* MomElement.swift */,
 				484F8E6C1EE81E2B00C854AA /* MomRelationship.swift */,
 				484F8E6D1EE81E2B00C854AA /* MomUserInfo.swift */,
-				484F8E6A1EE81E2B00C854AA /* MomEntity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,9 +258,9 @@
 				484F8E6E1EE81E2B00C854AA /* XMLConvertible.swift */,
 				484F8EAB1EE8350400C854AA /* MomXML+XMLConvertible.swift */,
 				484F8E821EE823E300C854AA /* MomModel+XMLConvertible.swift */,
+				484F8E811EE823E300C854AA /* MomEntity+XMLConvertible.swift */,
 				484F8E7F1EE823E300C854AA /* MomAttribute+XMLConvertible.swift */,
 				484F8E801EE823E300C854AA /* MomElement+XMLConvertible.swift */,
-				484F8E811EE823E300C854AA /* MomEntity+XMLConvertible.swift */,
 				484F8E831EE823E300C854AA /* MomRelationship+XMLConvertible.swift */,
 				484F8E841EE823E300C854AA /* MomUserInfo+XMLConvertible.swift */,
 			);
@@ -261,16 +282,26 @@
 			path = FromXML;
 			sourceTree = "<group>";
 		};
+		485493DD1EF2B5BC00FDD396 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				897B74411EF00C46000E6560 /* model.xml */,
+				897B74441EF13FB8000E6560 /* model2.xml */,
+				897B74471EF17FA2000E6560 /* modelJsonToXML.xml */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		897B74321EEED40E000E6560 /* Equatable */ = {
 			isa = PBXGroup;
 			children = (
-				897B74331EEED426000E6560 /* MomUserInfo+Equatable.swift */,
-				897B74351EEED5A2000E6560 /* MomEntity+Equatable.swift */,
-				897B74371EEED5BF000E6560 /* MomRelationship+Equatable.swift */,
-				897B743B1EEED66B000E6560 /* MomElement+Equatable.swift */,
-				897B74391EEED635000E6560 /* MomAttribute+Equatable.swift */,
-				897B743D1EEED6B3000E6560 /* MomModel+Equatable.swift */,
 				897B743F1EEED732000E6560 /* MomXML+Equatable.swift */,
+				897B743D1EEED6B3000E6560 /* MomModel+Equatable.swift */,
+				897B74351EEED5A2000E6560 /* MomEntity+Equatable.swift */,
+				897B74391EEED635000E6560 /* MomAttribute+Equatable.swift */,
+				897B743B1EEED66B000E6560 /* MomElement+Equatable.swift */,
+				897B74371EEED5BF000E6560 /* MomRelationship+Equatable.swift */,
+				897B74331EEED426000E6560 /* MomUserInfo+Equatable.swift */,
 			);
 			path = Equatable;
 			sourceTree = "<group>";
@@ -373,9 +404,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				897B74481EF17FA2000E6560 /* modelJsonToXML.xml in Resources */,
-				897B74451EF13FB8000E6560 /* model2.xml in Resources */,
-				897B74421EF00C46000E6560 /* model.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +461,9 @@
 				484F8E6F1EE81E2B00C854AA /* MomAttribute.swift in Sources */,
 				484F8EAC1EE8350400C854AA /* MomXML+XMLConvertible.swift in Sources */,
 				482BE8ED1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift in Sources */,
+				481601221EF81C590051BD89 /* MomAttribute+CoreData.swift in Sources */,
 				484F8EA51EE82AAC00C854AA /* MomRelationship+XMLObject.swift in Sources */,
+				481601261EF81C9D0051BD89 /* MomEntity+CoreData.swift in Sources */,
 				897B74381EEED5BF000E6560 /* MomRelationship+Equatable.swift in Sources */,
 				897B743C1EEED66B000E6560 /* MomElement+Equatable.swift in Sources */,
 				482BE8F11EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift in Sources */,
@@ -449,6 +479,7 @@
 				484F8E871EE823E300C854AA /* MomEntity+XMLConvertible.swift in Sources */,
 				484F8EA31EE82AAC00C854AA /* MomEntity+XMLObject.swift in Sources */,
 				484F8EA41EE82AAC00C854AA /* MomModel+XMLObject.swift in Sources */,
+				481601281EF81CB70051BD89 /* MomRelationship+CoreData.swift in Sources */,
 				484F8EAA1EE834C500C854AA /* MomXML.swift in Sources */,
 				897B74401EEED732000E6560 /* MomXML+Equatable.swift in Sources */,
 				482BE8EF1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift in Sources */,
@@ -456,11 +487,14 @@
 				484F8EAE1EE8355600C854AA /* MomXML+XMLObject.swift in Sources */,
 				897B743A1EEED635000E6560 /* MomAttribute+Equatable.swift in Sources */,
 				897B74341EEED426000E6560 /* MomUserInfo+Equatable.swift in Sources */,
+				4816012A1EF81CFC0051BD89 /* MomUserInfo+CoreData.swift in Sources */,
 				484F8E861EE823E300C854AA /* MomElement+XMLConvertible.swift in Sources */,
 				484F8E851EE823E300C854AA /* MomAttribute+XMLConvertible.swift in Sources */,
 				484F8EA61EE82AAC00C854AA /* MomUserInfo+XMLObject.swift in Sources */,
+				481601201EF8155E0051BD89 /* MomXml+CoreData.swift in Sources */,
 				482BE8F31EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift in Sources */,
 				484F8E721EE81E2B00C854AA /* MomModel.swift in Sources */,
+				481601241EF81C790051BD89 /* MomModel+CoreData.swift in Sources */,
 				484F8E8A1EE823E300C854AA /* MomUserInfo+XMLConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

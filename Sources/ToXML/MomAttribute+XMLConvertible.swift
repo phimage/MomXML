@@ -34,7 +34,16 @@ extension MomAttribute: XMLConvertible {
             output += " maxValueString=\"\(maxValueString)\""
         }
 
-        output += " syncable=\"\(syncable.xml)\"/>"
+        output += " syncable=\"\(syncable.xml)\""
+
+        if self.userInfo.isEmpty {
+            output += "/>"
+        } else {
+            output += "\n"
+            output += userInfo.xml
+            output += "\n"
+            output += "</attribute>"
+        }
 
         return output
     }

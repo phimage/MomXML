@@ -20,6 +20,8 @@ public struct MomAttribute {
     public var isIndexed: Bool = true
     public var usesScalarValueType: Bool = false
 
+    public var userInfo = MomUserInfo()
+
     public init(name: String, attributeType: AttributeType, isOptional: Bool = false, isTransient: Bool = false) {
         self.name = name
         self.attributeType = attributeType

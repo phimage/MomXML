@@ -27,6 +27,12 @@ extension MomAttribute: XMLObject {
         self.defaultDateTimeInterval = xml.element?.attribute(by: "defaultDateTimeInterval")?.text
         self.minValueString = xml.element?.attribute(by: "minValueString")?.text
         self.maxValueString = xml.element?.attribute(by: "maxValueString")?.text
+
+        for xml in xml.children {
+            if let object = MomUserInfo(xml: xml) {
+                userInfo = object
+            }
+        }
     }
 
 }

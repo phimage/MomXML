@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 extension NSRelationshipDescription {
 
@@ -23,7 +24,7 @@ extension NSRelationshipDescription {
         mom.isToMany = self.isToMany
         mom.isOrdered = self.isOrdered
         mom.isOptional = self.isOptional
-
+        mom.isTransient = self.isTransient
         mom.deletionRule = self.deleteRule.mom
 
         if let userInfo = self.userInfo {

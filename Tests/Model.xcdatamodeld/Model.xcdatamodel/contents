@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Client" representedClassName="Client" syncable="YES" codeGenerationType="class">
-        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="key" value="value"/>
+            </userInfo>
+        </attribute>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="client_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_client" inverseEntity="Commande" syncable="YES"/>
@@ -20,7 +24,7 @@
         <relationship name="produit_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_produit" inverseEntity="Commande" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Client" positionX="-236" positionY="-27" width="128" height="103"/>
+        <element name="Client" positionX="-236" positionY="-27" width="128" height="105"/>
         <element name="Commande" positionX="-45" positionY="-144" width="128" height="118"/>
         <element name="Produit" positionX="153" positionY="-54" width="128" height="103"/>
     </elements>

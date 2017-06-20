@@ -20,6 +20,10 @@ extension MomRelationship: XMLConvertible {
             output += " inverseName=\"\(inverseName)\" inverseEntity=\"\(inverseEntity)\""
         }
 
+        if isTransient {
+            output += " transient=\"\(isTransient.xml)\""
+        }
+
         output += " syncable=\"\(syncable.xml)\""
 
         if userInfo.isEmpty {

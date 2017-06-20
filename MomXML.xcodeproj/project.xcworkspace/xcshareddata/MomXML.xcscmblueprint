@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "2CC61DF9A4D62B941E9D7D611D19CB9BF197B1AF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2CC61DF9A4D62B941E9D7D611D19CB9BF197B1AF" : 9223372036854775807,
+    "740750BEE55FC8CF9EFC7BB98AE4050A41B70123" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D4372CA2-1EED-4B17-8320-DF74E98EDE03",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2CC61DF9A4D62B941E9D7D611D19CB9BF197B1AF" : "MomXML\/",
+    "740750BEE55FC8CF9EFC7BB98AE4050A41B70123" : "..\/Dev\/ManagedObjectModelSerializer"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MomXML",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MomXML.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/phimage\/MomXML.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2CC61DF9A4D62B941E9D7D611D19CB9BF197B1AF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/contentful\/ManagedObjectModelSerializer",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "740750BEE55FC8CF9EFC7BB98AE4050A41B70123"
+    }
+  ]
+}

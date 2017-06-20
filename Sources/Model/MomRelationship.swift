@@ -6,36 +6,34 @@ import Foundation
 
 public struct MomRelationship {
 
-    var userInfo = MomUserInfo()
+    public var name: String
+    public var isOptional: Bool
+    public var isOrdered: Bool
+    public var isTransient: Bool
 
-    var name: String
-    var isOptional: Bool
-    var isOrdered: Bool
+    public var isToMany: Bool
+    public var maxCount: Int?
+    public var minCount: Int?
 
-    var isToMany: Bool
-    var maxCount: Int?
-    var minCount: Int?
+    public var deletionRule: DeletionRule = .nullify
 
-    var deletionRule: DeletionRule = .nullify
+    public var destinationEntity: String
 
-    var destinationEntity: String
+    public var syncable: Bool = true
 
-    var syncable: Bool = true
+    public var inverseName: String?
+    public var inverseEntity: String?
 
-    var inverseName: String?
-    var inverseEntity: String?
+    public var userInfo = MomUserInfo()
 
-    public init(name: String, destinationEntity: String, isToMany: Bool = false, isOrdered: Bool = false, isOptional: Bool = false) {
+    public init(name: String, destinationEntity: String, isToMany: Bool = false, isOrdered: Bool = false, isOptional: Bool = false, isTransient: Bool = false) {
         self.name = name
         self.isToMany = isToMany
         self.isOrdered = isOrdered
         self.isOptional = isOptional
+        self.isTransient = isTransient
         self.destinationEntity = destinationEntity
     }
-
-}
-
-extension MomRelationship {
 
     public enum DeletionRule: String {
         case cascade = "Cascade"
