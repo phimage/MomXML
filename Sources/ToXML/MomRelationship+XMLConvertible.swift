@@ -29,6 +29,7 @@ extension MomRelationship: XMLConvertible {
         if userInfo.isEmpty {
             output += "/>"
         } else {
+            output += ">"
             output += "\n"
             output += userInfo.xml
             output += "\n"

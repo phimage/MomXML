@@ -39,6 +39,7 @@ extension MomAttribute: XMLConvertible {
         if self.userInfo.isEmpty {
             output += "/>"
         } else {
+            output += ">"
             output += "\n"
             output += userInfo.xml
             output += "\n"
