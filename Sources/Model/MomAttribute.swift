@@ -17,8 +17,9 @@ public struct MomAttribute {
     public var syncable: Bool = true
     public var isOptional: Bool = false
     public var isTransient: Bool = false
-    public var isIndexed: Bool = true
+    public var isIndexed: Bool = false
     public var usesScalarValueType: Bool = false
+    public var isIndexedBySpotlight: Bool = false
 
     public var userInfo = MomUserInfo()
 
@@ -43,6 +44,8 @@ public struct MomAttribute {
         case transformable = "Transformable"
         case undefined = "Undefined"
         case objectID = "ObjectID"
+        case uuid = "UUID"
+        case uri = "URI"
     }
 
 }

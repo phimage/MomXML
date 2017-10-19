@@ -21,3 +21,7 @@ extension MomXML: XMLObject {
     }
 
 }
+
+extension MomXML {
+    public static var orphanCallback: ((XML, Any) -> Void)?
+}

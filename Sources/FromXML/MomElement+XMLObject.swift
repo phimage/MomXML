@@ -13,10 +13,10 @@ extension MomElement: XMLObject {
         guard let name = element.attribute(by: "name")?.text,
             let positionX = element.attribute(by: "positionX")?.text.toInt,
             let positionY = element.attribute(by: "positionY")?.text.toInt,
-            let width = element.attribute(by: "width")?.text.toInt,
-            let height = element.attribute(by: "height")?.text.toInt else {
+            let width = element.attribute(by: "width")?.text.toInt else {
                 return nil
         }
+        let height = element.attribute(by: "height")?.text.toInt ?? 0 //optional
         self.init(name: name, positionX: positionX, positionY: positionY, width: width, height: height)
     }
 

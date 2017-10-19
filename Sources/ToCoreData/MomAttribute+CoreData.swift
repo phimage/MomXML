@@ -15,9 +15,13 @@ extension MomAttribute {
         coreData.attributeType = self.attributeType.coreData
         coreData.name = self.name
         coreData.isOptional = self.isOptional
-        coreData.isIndexed = self.isIndexed
+        if #available(iOS 11, *), #available(OSX 10.13, *) {
 
-        // coreData.userInfo = self.userInfo.coreData
+        } else {
+            coreData.isIndexed = self.isIndexed
+        }
+        coreData.isIndexedBySpotlight = self.isIndexedBySpotlight
+        coreData.userInfo = self.userInfo.coreData
 
         return coreData
     }
@@ -53,6 +57,19 @@ extension MomAttribute.AttributeType {
             return .undefinedAttributeType
         case .objectID:
             return .objectIDAttributeType
+        default:
+            if #available(iOS 11, *), #available(macOS 10.13, *) {
+                switch self {
+                case .uuid:
+                    return .UUIDAttributeType
+                case .uri:
+                    return .URIAttributeType
+                default:
+                    return .undefinedAttributeType
+                }
+            } else {
+                return .undefinedAttributeType
+            }
         }
     }
 

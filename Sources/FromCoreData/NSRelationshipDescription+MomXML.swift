@@ -13,7 +13,7 @@ extension NSRelationshipDescription {
 
     public var mom: MomRelationship {
         let destination = self.destinationEntity!.name!
-        var mom = MomRelationship(name:  self.name, destinationEntity: destination)
+        var mom = MomRelationship(name: self.name, destinationEntity: destination)
 
         if self.maxCount > 0 {
             mom.maxCount = self.maxCount

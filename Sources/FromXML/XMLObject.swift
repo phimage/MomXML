@@ -3,8 +3,10 @@
 //
 
 import Foundation
-import SWXMLHash
-
+#if USESOURCE
+#else
+    import SWXMLHash
+#endif
 public typealias XML = XMLIndexer
 
 public protocol XMLObject {

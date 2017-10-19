@@ -27,6 +27,8 @@ extension MomEntity: XMLObject {
                 self.relationship.append(object)
             } else if let object = MomUserInfo(xml: xml) {
                userInfo = object
+            } else {
+                MomXML.orphanCallback?(xml, [MomAttribute.self, MomRelationship.self, MomUserInfo.self])
             }
         }
 

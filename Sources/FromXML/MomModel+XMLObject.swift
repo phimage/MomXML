@@ -24,8 +24,12 @@ extension MomModel: XMLObject {
                 for xml in xml.children {
                     if let element = MomElement(xml: xml) {
                         self.elements.append(element)
+                    } else {
+                        MomXML.orphanCallback?(xml, MomElement.self)
                     }
                 }
+            } else {
+                MomXML.orphanCallback?(xml, MomEntity.self)
             }
         }
     }

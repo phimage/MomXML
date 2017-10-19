@@ -14,6 +14,8 @@ extension MomUserInfo: XMLObject {
         for child in xml.children {
             if let entry = MomUserInfoEntry(xml: child) {
                 self.entries.append(entry)
+            } else {
+                MomXML.orphanCallback?(xml, MomUserInfoEntry.self)
             }
         }
     }

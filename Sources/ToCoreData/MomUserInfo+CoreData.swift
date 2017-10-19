@@ -11,7 +11,7 @@ import CoreData
 
 extension MomUserInfo {
 
-    public var coreData: [AnyHashable : Any]? {
+    public var coreData: [AnyHashable: Any]? {
         if isEmpty {
             return nil
         }

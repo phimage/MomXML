@@ -18,7 +18,7 @@ public struct MomUserInfo {
 
     public init() {}
 
-    public init(userInfo: [AnyHashable : Any]) {
+    public init(userInfo: [AnyHashable: Any]) {
         entries = userInfo.map { MomUserInfoEntry(key: "\($0.key)", value: "\($0.value)") }
     }
 }

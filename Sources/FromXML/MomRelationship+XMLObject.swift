@@ -36,6 +36,8 @@ extension MomRelationship: XMLObject {
         for xml in xml.children {
             if let object = MomUserInfo(xml: xml) {
                 userInfo = object
+            } else {
+                MomXML.orphanCallback?(xml, MomUserInfo.self)
             }
         }
     }

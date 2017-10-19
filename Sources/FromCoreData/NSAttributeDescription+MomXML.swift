@@ -19,7 +19,11 @@ extension NSAttributeDescription {
         }
         mom.isOptional = self.isOptional
         mom.isTransient = self.isTransient
-        mom.isIndexed = self.isIndexed
+        if #available(iOS 11, *), #available(macOS 10.13, *) {
+        } else {
+            mom.isIndexed = self.isIndexed
+        }
+        mom.isIndexedBySpotlight = self.isIndexedBySpotlight
 
        return mom
     }
@@ -59,6 +63,19 @@ extension NSAttributeType {
             return .undefined
         case .objectIDAttributeType:
             return .objectID
+        default:
+            if #available(iOS 11, *), #available(macOS 10.13, *) {
+                switch self {
+                case .UUIDAttributeType:
+                    return .uuid
+                case .URIAttributeType:
+                    return .uri
+                default:
+                    return .undefined
+                }
+            } else {
+                return .undefined
+            }
         }
     }
 
