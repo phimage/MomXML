@@ -23,7 +23,47 @@ extension MomUserInfo: XMLConvertible {
 extension MomUserInfoEntry: XMLConvertible {
 
     public var xml: String {
-        return "<element key=\"\(key)\" value=\"\(value)\"/>"
+        return "<element key=\"\(key)\" value=\"\(value.xmlSimpleEscape)\"/>"
     }
 
+}
+
+
+extension String {
+
+    private typealias SimpleToFromRepalceList = [(fromSubString: String, toSubString: String)]
+    private static let xmlUnescapeMapList : SimpleToFromRepalceList = [
+        ("&amp;",  "&"),
+        ("&quot;", "\""),
+        ("&#x27;", "'"),
+        ("&#39;",  "'"),
+        ("&#x92;", "'"),
+        ("&#x96;", "-"),
+        ("&gt;",   ">"),
+        ("&lt;",   "<")]
+    private static let xmlEscapeMapList : SimpleToFromRepalceList = [
+        ("&",  "&amp;"),
+        ("\"", "&quot;"),
+        ("'",  "&#x27;"),
+        (">",  "&gt;"),
+        ("<",  "&lt;")]
+
+    private func simpleReplace(_ mapList: SimpleToFromRepalceList ) -> String {
+        var string = self
+        for (fromStr, toStr) in mapList {
+            let separatedList = string.components(separatedBy: fromStr)
+            if separatedList.count > 1 {
+                string = separatedList.joined(separator: toStr)
+            }
+        }
+        return string
+    }
+
+    var xmlSimpleUnescape: String {
+        return self.simpleReplace(String.xmlUnescapeMapList)
+    }
+
+    var xmlSimpleEscape: String {
+        return self.simpleReplace(String.xmlEscapeMapList)
+    }
 }
