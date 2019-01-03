@@ -17,19 +17,19 @@ extension MomModel: XMLObject {
         minimumToolsVersion = element.attribute(by: "minimumToolsVersion")?.text ?? minimumToolsVersion
         userDefinedModelVersionIdentifier = element.attribute(by: "userDefinedModelVersionIdentifier")?.text ?? userDefinedModelVersionIdentifier
 
-        for xml in xml.children {
-            if let entity = MomEntity(xml: xml) {
+        for xmlChildren in xml.children {
+            if let entity = MomEntity(xml: xmlChildren) {
                 self.entities.append(entity)
-            } else if xml.element?.name == "elements" {
-                for xml in xml.children {
-                    if let element = MomElement(xml: xml) {
+            } else if xmlChildren.element?.name == "elements" {
+                for xmlSubChildren in xmlChildren.children {
+                    if let element = MomElement(xml: xmlSubChildren) {
                         self.elements.append(element)
                     } else {
-                        MomXML.orphanCallback?(xml, MomElement.self)
+                        MomXML.orphanCallback?(xmlSubChildren, MomElement.self)
                     }
                 }
             } else {
-                MomXML.orphanCallback?(xml, MomEntity.self)
+                MomXML.orphanCallback?(xmlChildren, MomEntity.self)
             }
         }
     }

@@ -17,16 +17,16 @@ extension MomAttribute: XMLObject {
         }
         self.init(name: name, attributeType: attributeType)
 
-        self.isOptional = xml.element?.attribute(by: "optional")?.text.toBool ?? false
-        self.usesScalarValueType = xml.element?.attribute(by: "usesScalarValueType")?.text.toBool ?? false
-        self.isIndexed = xml.element?.attribute(by: "indexed")?.text.toBool ?? false
-        self.isTransient = xml.element?.attribute(by: "transient")?.text.toBool ?? false
-        self.syncable = xml.element?.attribute(by: "syncable")?.text.toBool ?? false
+        self.isOptional = element.attribute(by: "optional")?.text.toBool ?? false
+        self.usesScalarValueType = element.attribute(by: "usesScalarValueType")?.text.toBool ?? false
+        self.isIndexed = element.attribute(by: "indexed")?.text.toBool ?? false
+        self.isTransient = element.attribute(by: "transient")?.text.toBool ?? false
+        self.syncable = element.attribute(by: "syncable")?.text.toBool ?? false
 
-        self.defaultValueString = xml.element?.attribute(by: "defaultValueString")?.text
-        self.defaultDateTimeInterval = xml.element?.attribute(by: "defaultDateTimeInterval")?.text
-        self.minValueString = xml.element?.attribute(by: "minValueString")?.text
-        self.maxValueString = xml.element?.attribute(by: "maxValueString")?.text
+        self.defaultValueString = element.attribute(by: "defaultValueString")?.text
+        self.defaultDateTimeInterval = element.attribute(by: "defaultDateTimeInterval")?.text
+        self.minValueString = element.attribute(by: "minValueString")?.text
+        self.maxValueString = element.attribute(by: "maxValueString")?.text
 
         for xml in xml.children {
             if let object = MomUserInfo(xml: xml) {

@@ -28,6 +28,12 @@
         <attribute name="prix" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="reference" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="produit_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_produit" inverseEntity="Commande" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Produit" predicateString="predicate"/>
+        </fetchedProperty>
+        <fetchedProperty name="fetchedProperty1" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Produit" predicateString="predicate1"/>
+        </fetchedProperty>
     </entity>
     <elements>
         <element name="Client" positionX="-236" positionY="-27" width="128" height="103"/>

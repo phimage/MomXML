@@ -16,6 +16,10 @@ extension MomEntity: XMLConvertible {
             output += relation.xml
             output += "\n"
         }
+        for fetchProperty in fetchProperties {
+            output += fetchProperty.xml
+            output += "\n"
+        }
 
         if !userInfo.isEmpty {
             output += userInfo.xml

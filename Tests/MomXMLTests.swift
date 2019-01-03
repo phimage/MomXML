@@ -44,9 +44,9 @@ class MomXMLTests: XCTestCase {
         let entityStatus = MomEntity(name: "Status")
         let entityFunction = MomEntity(name: "Function")
         
-        let elementPersonne = MomElement.init(name: "Personne")
-        let elementStatus = MomElement.init(name: "Status")
-        let elementFunction = MomElement.init(name: "Function")
+        let elementPersonne = MomElement(name: "Personne")
+        let elementStatus = MomElement(name: "Status")
+        let elementFunction = MomElement(name: "Function")
 
         momXML.model.entities.append(entityPersonne)
         momXML.model.entities.append(entityStatus)
@@ -66,26 +66,27 @@ class MomXMLTests: XCTestCase {
         let parsedMom = MomXML(xml: xml)
         XCTAssertNotNil(parsedMom)
     }
-    func testEntityWithAttribut(){
+
+    func testEntityWithAttribute(){
         var momXML = MomXML()
         var entitySociete = MomEntity(name: "Societe")
-        let attrFirstName = MomAttribute.init(name: "name", attributeType: MomAttribute.AttributeType.string)
-        let attrlastName = MomAttribute.init(name: "adresse", attributeType: MomAttribute.AttributeType.string)
-        let attrIdSociete = MomAttribute.init(name: "id", attributeType: MomAttribute.AttributeType.integer16)
+        let attrFirstName = MomAttribute(name: "name", attributeType: MomAttribute.AttributeType.string)
+        let attrlastName = MomAttribute(name: "adresse", attributeType: MomAttribute.AttributeType.string)
+        let attrIdSociete = MomAttribute(name: "id", attributeType: MomAttribute.AttributeType.integer16)
         entitySociete.attributes.append(attrFirstName)
         entitySociete.attributes.append(attrlastName)
         entitySociete.attributes.append(attrIdSociete)
         
         var entityFournissieur = MomEntity(name: "Fournissieur")
-        let attrFirstNameFournissieur = MomAttribute.init(name: "firstname", attributeType: MomAttribute.AttributeType.string)
-        let attrlastNameFournissieur = MomAttribute.init(name: "lastname", attributeType: MomAttribute.AttributeType.string)
-        let attrIdClient = MomAttribute.init(name: "id", attributeType: MomAttribute.AttributeType.integer16)
+        let attrFirstNameFournissieur = MomAttribute(name: "firstname", attributeType: MomAttribute.AttributeType.string)
+        let attrlastNameFournissieur = MomAttribute(name: "lastname", attributeType: MomAttribute.AttributeType.string)
+        let attrIdClient = MomAttribute(name: "id", attributeType: MomAttribute.AttributeType.integer16)
         entityFournissieur.attributes.append(attrFirstNameFournissieur)
         entityFournissieur.attributes.append(attrlastNameFournissieur)
         entityFournissieur.attributes.append(attrIdClient)
         
-        let elementSociete = MomElement.init(name: "Societe")
-        let elementFournissieur = MomElement.init(name: "Status")
+        let elementSociete = MomElement(name: "Societe")
+        let elementFournissieur = MomElement(name: "Status")
         
         momXML.model.entities.append(entitySociete)
         momXML.model.entities.append(entityFournissieur)
@@ -108,45 +109,45 @@ class MomXMLTests: XCTestCase {
     func testMomEntityWithRelation() {
         var momXML = MomXML()
         var entityClient = MomEntity(name: "Client")
-        let attrFirstName = MomAttribute.init(name: "firstname", attributeType: MomAttribute.AttributeType.string)
-        let attrlastName = MomAttribute.init(name: "lastname", attributeType: MomAttribute.AttributeType.string)
-        let attrIdClient = MomAttribute.init(name: "id", attributeType: MomAttribute.AttributeType.integer16)
+        let attrFirstName = MomAttribute(name: "firstname", attributeType: MomAttribute.AttributeType.string)
+        let attrlastName = MomAttribute(name: "lastname", attributeType: MomAttribute.AttributeType.string)
+        let attrIdClient = MomAttribute(name: "id", attributeType: MomAttribute.AttributeType.integer16)
         entityClient.attributes.append(attrFirstName)
         entityClient.attributes.append(attrlastName)
         entityClient.attributes.append(attrIdClient)
         entityClient.userInfo.add(key: "name1", value: "valuename1")
-        let myrelationshipClient = MomRelationship.init(name: "client_commande", destinationEntity: "Commande")
+        let myrelationshipClient = MomRelationship(name: "client_commande", destinationEntity: "Commande")
         entityClient.relationship.append(myrelationshipClient)
         
         
         var entityCommande = MomEntity(name: "Commande")
-        let attrDate = MomAttribute.init(name: "date", attributeType: MomAttribute.AttributeType.date)
-        let attrDescriptionCommande = MomAttribute.init(name: "descriptioncommande", attributeType: MomAttribute.AttributeType.string)
-        let attrIdCommande = MomAttribute.init(name: "id", attributeType: MomAttribute.AttributeType.integer16)
+        let attrDate = MomAttribute(name: "date", attributeType: MomAttribute.AttributeType.date)
+        let attrDescriptionCommande = MomAttribute(name: "descriptioncommande", attributeType: MomAttribute.AttributeType.string)
+        let attrIdCommande = MomAttribute(name: "id", attributeType: MomAttribute.AttributeType.integer16)
         entityCommande.attributes.append(attrIdCommande)
         entityCommande.attributes.append(attrDate)
         entityCommande.attributes.append(attrDescriptionCommande)
         entityCommande.userInfo.add(key: "name2", value: "valuename2")
-        let myrelationshipCommande = MomRelationship.init(name: "commande_client", destinationEntity: "Client")
-        let myrelationshipCommande2 = MomRelationship.init(name: "commande_produit", destinationEntity: "Produit")
+        let myrelationshipCommande = MomRelationship(name: "commande_client", destinationEntity: "Client")
+        let myrelationshipCommande2 = MomRelationship(name: "commande_produit", destinationEntity: "Produit")
         entityCommande.relationship.append(myrelationshipCommande)
         entityCommande.relationship.append(myrelationshipCommande2)
         
         var entityProduit = MomEntity(name: "Produit")
-        let attrName = MomAttribute.init(name: "name", attributeType: MomAttribute.AttributeType.string)
-        let attrPrix = MomAttribute.init(name: "prix", attributeType: MomAttribute.AttributeType.double)
-        let attrReference = MomAttribute.init(name: "reference", attributeType: MomAttribute.AttributeType.string)
-        let attrIdProduit = MomAttribute.init(name: "id", attributeType: MomAttribute.AttributeType.integer16)
+        let attrName = MomAttribute(name: "name", attributeType: MomAttribute.AttributeType.string)
+        let attrPrix = MomAttribute(name: "prix", attributeType: MomAttribute.AttributeType.double)
+        let attrReference = MomAttribute(name: "reference", attributeType: MomAttribute.AttributeType.string)
+        let attrIdProduit = MomAttribute(name: "id", attributeType: MomAttribute.AttributeType.integer16)
         entityProduit.attributes.append(attrIdProduit)
         entityProduit.attributes.append(attrName)
         entityProduit.attributes.append(attrPrix)
         entityProduit.attributes.append(attrReference)
-        let myrelationshipProduit = MomRelationship.init(name: "produit_commande", destinationEntity: "Commande")
+        let myrelationshipProduit = MomRelationship(name: "produit_commande", destinationEntity: "Commande")
         entityProduit.relationship.append(myrelationshipProduit)
         
-        let elementClient = MomElement.init(name: "Client", positionX: 106, positionY: -45, width: 128, height: 118)
-        let elementProduit = MomElement.init(name: "Produit")
-        let elementCommande = MomElement.init(name: "Commande")
+        let elementClient = MomElement(name: "Client", positionX: 106, positionY: -45, width: 128, height: 118)
+        let elementProduit = MomElement(name: "Produit")
+        let elementCommande = MomElement(name: "Commande")
         
         var momModel = MomModel()
         momModel.entities.append(entityClient)
@@ -229,6 +230,17 @@ class MomXMLTests: XCTestCase {
         entityClient.relationship.append(myrelationshipClient)
         XCTAssertEqual(entityClient, entityClient)
 
+        // fetch
+        let featchRequest = MomFetchRequest(name: "name", entity: entityClient.name, predicateString: "TRUE")
+        let emptyFetchRequest = MomFetchRequest(name: "", entity: "", predicateString: "")
+        XCTAssertEqual(featchRequest, featchRequest)
+        XCTAssertNotEqual(featchRequest, emptyFetchRequest)
+
+        let fetchProperty = MomFetchedProperty(name: "nametest", fetchRequest: featchRequest)
+        XCTAssertEqual(fetchProperty, fetchProperty)
+        XCTAssertNotEqual(fetchProperty, MomFetchedProperty(name: "", fetchRequest: emptyFetchRequest))
+        XCTAssertNotEqual(fetchProperty, MomFetchedProperty(name: "t", fetchRequest: featchRequest))
+
         //model
         var momModel = MomModel()
         momModel.entities.append(entityClient)
@@ -284,6 +296,9 @@ class MomXMLTests: XCTestCase {
                     }
                     for attr in entity.relationship {
                         print("\(attr.name)  \(attr.destinationEntity)")
+                    }
+                    for attr in entity.fetchProperties {
+                        print("\(attr.name)  \(attr.fetchRequest.predicateString)")
                     }
                 }
                 
