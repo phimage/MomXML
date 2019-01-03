@@ -28,25 +28,24 @@ extension MomUserInfoEntry: XMLConvertible {
 
 }
 
-
 extension String {
 
     private typealias SimpleToFromRepalceList = [(fromSubString: String, toSubString: String)]
-    private static let xmlUnescapeMapList : SimpleToFromRepalceList = [
-        ("&amp;",  "&"),
+    private static let xmlUnescapeMapList: SimpleToFromRepalceList = [
+        ("&amp;", "&"),
         ("&quot;", "\""),
         ("&#x27;", "'"),
-        ("&#39;",  "'"),
+        ("&#39;", "'"),
         ("&#x92;", "'"),
         ("&#x96;", "-"),
-        ("&gt;",   ">"),
-        ("&lt;",   "<")]
-    private static let xmlEscapeMapList : SimpleToFromRepalceList = [
-        ("&",  "&amp;"),
+        ("&gt;", ">"),
+        ("&lt;", "<")]
+    private static let xmlEscapeMapList: SimpleToFromRepalceList = [
+        ("&", "&amp;"),
         ("\"", "&quot;"),
-        ("'",  "&#x27;"),
-        (">",  "&gt;"),
-        ("<",  "&lt;")]
+        ("'", "&#x27;"),
+        (">", "&gt;"),
+        ("<", "&lt;")]
 
     private func simpleReplace(_ mapList: SimpleToFromRepalceList ) -> String {
         var string = self
