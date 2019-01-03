@@ -5,6 +5,19 @@
 import Foundation
 import CoreData
 
+extension MomFetchedProperty {
+
+    public var coreData: NSFetchedPropertyDescription {
+        let coreData = NSFetchedPropertyDescription()
+        coreData.name = self.name
+        coreData.isOptional = self.isOptional
+        coreData.fetchRequest = self.fetchRequest.coreData
+
+        return coreData
+    }
+
+}
+
 extension MomFetchRequest {
 
     public var coreData: NSFetchRequest<NSFetchRequestResult> {
