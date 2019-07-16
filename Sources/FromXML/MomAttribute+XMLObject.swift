@@ -22,11 +22,13 @@ extension MomAttribute: XMLObject {
         self.isIndexed = element.attribute(by: "indexed")?.text.toBool ?? false
         self.isTransient = element.attribute(by: "transient")?.text.toBool ?? false
         self.syncable = element.attribute(by: "syncable")?.text.toBool ?? false
+        self.isDerived = element.attribute(by: "derived")?.text.toBool ?? false
 
         self.defaultValueString = element.attribute(by: "defaultValueString")?.text
         self.defaultDateTimeInterval = element.attribute(by: "defaultDateTimeInterval")?.text
         self.minValueString = element.attribute(by: "minValueString")?.text
         self.maxValueString = element.attribute(by: "maxValueString")?.text
+        self.derivationExpression = element.attribute(by: "derivationExpression")?.text
 
         for xml in xml.children {
             if let object = MomUserInfo(xml: xml) {

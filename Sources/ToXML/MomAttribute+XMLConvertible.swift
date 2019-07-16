@@ -20,7 +20,12 @@ extension MomAttribute: XMLConvertible {
         if isTransient {
             output += " transient=\"\(isTransient.xml)\""
         }
-
+        if isDerived {
+            output += " derived=\"\(isDerived.xml)\""
+        }
+        if let derivationExpression = derivationExpression {
+            output += " derivationExpression=\"\(derivationExpression)\""
+        }
         if let defaultValueString = defaultValueString {
             output += " defaultValueString=\"\(defaultValueString)\""
         }
@@ -33,9 +38,9 @@ extension MomAttribute: XMLConvertible {
         if let maxValueString = maxValueString {
             output += " maxValueString=\"\(maxValueString)\""
         }
-
+        
         output += " syncable=\"\(syncable.xml)\""
-
+        
         if self.userInfo.isEmpty {
             output += "/>"
         } else {

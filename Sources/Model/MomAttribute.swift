@@ -20,6 +20,9 @@ public struct MomAttribute {
     public var isIndexed: Bool = false
     public var usesScalarValueType: Bool = false
     public var isIndexedBySpotlight: Bool = false
+    public var isDerived: Bool = false
+    public var derivationExpression: String?
+
 
     public var userInfo = MomUserInfo()
 
