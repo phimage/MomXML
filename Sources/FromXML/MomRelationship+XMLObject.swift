@@ -23,7 +23,7 @@ extension MomRelationship: XMLObject {
         self.isOrdered = xml.element?.attribute(by: "ordered")?.text.toBool ?? false
         self.isTransient = xml.element?.attribute(by: "transient")?.text.toBool ?? false
 
-        if let text = xml.element?.attribute(by: "ordered")?.text, let rule = DeletionRule(rawValue: text) {
+        if let text = xml.element?.attribute(by: "deletionRule")?.text, let rule = DeletionRule(rawValue: text) {
             self.deletionRule = rule
         }
 
