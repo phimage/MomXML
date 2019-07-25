@@ -410,5 +410,51 @@ class MomXMLTests: XCTestCase {
             XCTFail("Unable to get test file Model")
         }
     }
+    
+    func testRelationships() {
 
+        let modelString = """
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class">
+<attribute name="attribute1" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+<relationship name="relationEntity1" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entity2" inverseName="relationEntity2" inverseEntity="Entity2" syncable="YES"/>
+</entity>
+<entity name="Entity2" representedClassName="Entity2" syncable="YES" codeGenerationType="class">
+<relationship name="relationEntity2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="relationEntity1" inverseEntity="Entity" syncable="YES"/>
+</entity>
+<elements>
+<element name="Entity" positionX="-1697.54296875" positionY="-87.4921875" width="128" height="238"/>
+<element name="Entity2" positionX="-403.99609375" positionY="15.84375" width="128" height="58"/>
+</elements>
+</model>
+"""
+        
+        let xml = SWXMLHash.parse(modelString)
+        guard let parsedMom = MomXML(xml: xml) else {
+            XCTFail("Unable to parse String XML model")
+            return
+        }
+        
+        let parsed = parsedMom.model.coreData
+        let entities = parsed.entities
+        for entity in entities { //Entity1
+            let relationships = entity.relationshipsByName
+            for (_, relation) in relationships { //relationEntity1
+                XCTAssertNotNil(relation.destinationEntity, "missing destination entity for \(relation) of \(entity)") //Entity2
+                XCTAssertNotNil(relation.inverseRelationship, "missing inverse relation for \(relation) of \(entity)") //relationEntity2
+                
+                if let inverseRelationship = relation.inverseRelationship {
+                    XCTAssertEqual(inverseRelationship.inverseRelationship?.name, relation.name, "inverse of inverse is not self for \(relation) of \(entity) : inverseRelationship is \(String(describing: inverseRelationship.inverseRelationship))")
+                    XCTAssertEqual(inverseRelationship.entity.name, relation.destinationEntity?.name, "entity of inverse is not self for \(relation) of \(entity) : inverseRelationship is \(String(describing: inverseRelationship.inverseRelationship))")
+                    if let destination = relation.destinationEntity {
+                        let destinationRelationships = destination.relationshipsByName.values
+                        XCTAssertTrue(destinationRelationships.contains(inverseRelationship))
+                    } // else already asserted
+                } // else already asserted
+            }
+        }
+    }
+    
 }
+

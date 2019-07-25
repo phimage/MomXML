@@ -17,12 +17,15 @@ extension MomRelationship {
         coreData.isOrdered = self.isOrdered
         coreData.isOptional = self.isOptional
         coreData.isTransient = self.isTransient
-        // coreData.isToMany = self.isToMany // from min count and max count
+        coreData.name = self.name
+
         if let minCount = self.minCount {
             coreData.minCount = minCount
         }
         if let maxCount = self.maxCount {
             coreData.maxCount = maxCount
+        } else if isToMany {
+            coreData.maxCount = 0
         }
 
         coreData.userInfo = self.userInfo.coreData

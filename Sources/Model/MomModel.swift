@@ -38,4 +38,23 @@ extension MomModel {
         // TODO move elements to not be at same place
     }
 
+    var momEntityByName: [String: MomEntity] {
+        return entities.dictionaryBy { $0.name }
+    }
+}
+
+extension Array {
+    /// Create a dictionary from this array.
+    ///
+    /// - parameter key: A closure to get hashing key from array values.
+    ///
+    /// - returns: the dictionary
+    func dictionaryBy<T: Hashable>(key: (Element) -> T) -> [T: Element] {
+        var result: [T: Element] = [:]
+        self.forEach {
+            let keyValue = key($0)
+            result[keyValue] = $0
+        }
+        return result
+    }
 }

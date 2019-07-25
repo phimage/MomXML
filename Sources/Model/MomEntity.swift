@@ -27,3 +27,12 @@ public struct MomEntity {
     // TODO MomCompoundIndex
     // TODO MomUniquenessConstraint
 }
+
+extension MomEntity {
+    var relationshipByName: [String: MomRelationship] {
+        return relationship.dictionaryBy { $0.name }
+    }
+    var attributesByName: [String: MomAttribute] {
+        return attributes.dictionaryBy { $0.name }
+    }
+}
