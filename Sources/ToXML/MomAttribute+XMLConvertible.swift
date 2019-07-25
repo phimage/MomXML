@@ -38,9 +38,9 @@ extension MomAttribute: XMLConvertible {
         if let maxValueString = maxValueString {
             output += " maxValueString=\"\(maxValueString)\""
         }
-        
+
         output += " syncable=\"\(syncable.xml)\""
-        
+
         if self.userInfo.isEmpty {
             output += "/>"
         } else {

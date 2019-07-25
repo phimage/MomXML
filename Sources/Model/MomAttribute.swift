@@ -23,7 +23,6 @@ public struct MomAttribute {
     public var isDerived: Bool = false
     public var derivationExpression: String?
 
-
     public var userInfo = MomUserInfo()
 
     public init(name: String, attributeType: AttributeType, isOptional: Bool = false, isTransient: Bool = false) {
