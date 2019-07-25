@@ -1,3 +1,10 @@
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
+[![Platform](http://img.shields.io/badge/platform-ios_macos-lightgrey.svg?style=flat)](https://developer.apple.com/resources/)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift Package Manager compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
+[![Build Status](https://travis-ci.org/phimage/MomXML.svg)](https://travis-ci.org/phimage/MomXML)
+
 # MomXML
 
 Create or parse CoreData managed object model XMLs.
