@@ -25,7 +25,7 @@ extension MomUserInfo: XMLObject {
 extension MomUserInfoEntry: XMLObject {
 
     public init?(xml: XML) {
-        guard let element = xml.element, element.name == "element" else {
+        guard let element = xml.element, element.name == "entry" else {
             return nil
         }
         guard let key = element.attribute(by: "key")?.text,
