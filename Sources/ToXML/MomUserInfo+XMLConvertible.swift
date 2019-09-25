@@ -23,7 +23,7 @@ extension MomUserInfo: XMLConvertible {
 extension MomUserInfoEntry: XMLConvertible {
 
     public var xml: String {
-        return "<element key=\"\(key)\" value=\"\(value.xmlSimpleEscape)\"/>"
+        return "<entry key=\"\(key)\" value=\"\(value.xmlSimpleEscape)\"/>"
     }
 
 }
