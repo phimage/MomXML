@@ -18,8 +18,8 @@ extension MomFetchedProperty: XMLObject {
         }
         self.init(name: name, fetchRequest: fetchRequest)
 
-        self.isOptional = element.attribute(by: "optional")?.text.toBool ?? false
-        self.syncable = element.attribute(by: "syncable")?.text.toBool ?? false
+        self.isOptional = element.attribute(by: "optional")?.text.fromXMLToBool ?? false
+        self.syncable = element.attribute(by: "syncable")?.text.fromXMLToBool ?? false
 
         for child in xml.children {
             if MomFetchRequest(xml: child) != nil {

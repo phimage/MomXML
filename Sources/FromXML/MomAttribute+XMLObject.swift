@@ -17,12 +17,12 @@ extension MomAttribute: XMLObject {
         }
         self.init(name: name, attributeType: attributeType)
 
-        self.isOptional = element.attribute(by: "optional")?.text.toBool ?? false
-        self.usesScalarValueType = element.attribute(by: "usesScalarValueType")?.text.toBool ?? false
-        self.isIndexed = element.attribute(by: "indexed")?.text.toBool ?? false
-        self.isTransient = element.attribute(by: "transient")?.text.toBool ?? false
-        self.syncable = element.attribute(by: "syncable")?.text.toBool ?? false
-        self.isDerived = element.attribute(by: "derived")?.text.toBool ?? false
+        self.isOptional = element.attribute(by: "optional")?.text.fromXMLToBool ?? false
+        self.usesScalarValueType = element.attribute(by: "usesScalarValueType")?.text.fromXMLToBool ?? false
+        self.isIndexed = element.attribute(by: "indexed")?.text.fromXMLToBool ?? false
+        self.isTransient = element.attribute(by: "transient")?.text.fromXMLToBool ?? false
+        self.syncable = element.attribute(by: "syncable")?.text.fromXMLToBool ?? false
+        self.isDerived = element.attribute(by: "derived")?.text.fromXMLToBool ?? false
 
         self.defaultValueString = element.attribute(by: "defaultValueString")?.text
         self.defaultDateTimeInterval = element.attribute(by: "defaultDateTimeInterval")?.text

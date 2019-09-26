@@ -17,18 +17,18 @@ extension MomRelationship: XMLObject {
         }
         self.init(name: name, destinationEntity: destinationEntity)
 
-        self.syncable = xml.element?.attribute(by: "syncable")?.text.toBool ?? false
-        self.isOptional = xml.element?.attribute(by: "optional")?.text.toBool ?? false
-        self.isToMany = xml.element?.attribute(by: "toMany")?.text.toBool ?? false
-        self.isOrdered = xml.element?.attribute(by: "ordered")?.text.toBool ?? false
-        self.isTransient = xml.element?.attribute(by: "transient")?.text.toBool ?? false
+        self.syncable = xml.element?.attribute(by: "syncable")?.text.fromXMLToBool ?? false
+        self.isOptional = xml.element?.attribute(by: "optional")?.text.fromXMLToBool ?? false
+        self.isToMany = xml.element?.attribute(by: "toMany")?.text.fromXMLToBool ?? false
+        self.isOrdered = xml.element?.attribute(by: "ordered")?.text.fromXMLToBool ?? false
+        self.isTransient = xml.element?.attribute(by: "transient")?.text.fromXMLToBool ?? false
 
         if let text = xml.element?.attribute(by: "deletionRule")?.text, let rule = DeletionRule(rawValue: text) {
             self.deletionRule = rule
         }
 
-        self.maxCount = xml.element?.attribute(by: "maxCount")?.text.toInt
-        self.minCount = xml.element?.attribute(by: "minCount")?.text.toInt
+        self.maxCount = xml.element?.attribute(by: "maxCount")?.text.fromXMLToInt
+        self.minCount = xml.element?.attribute(by: "minCount")?.text.fromXMLToInt
 
         self.inverseName = xml.element?.attribute(by: "inverseName")?.text
         self.inverseEntity = xml.element?.attribute(by: "inverseEntity")?.text

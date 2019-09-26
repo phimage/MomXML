@@ -10,6 +10,9 @@ import Foundation
 
 extension MomAttribute: Equatable {
     public static func == (lhs: MomAttribute, rhs: MomAttribute) -> Bool {
-        return lhs.name == rhs.name && lhs.isOptional == rhs.isOptional && lhs.isTransient == rhs.isTransient && lhs.attributeType.rawValue == rhs.attributeType.rawValue
+        return lhs.name == rhs.name
+            && lhs.isOptional == rhs.isOptional
+            && lhs.isTransient == rhs.isTransient
+            && lhs.attributeType.rawValue == rhs.attributeType.rawValue
     }
 }

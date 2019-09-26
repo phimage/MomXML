@@ -17,10 +17,13 @@ public protocol XMLObject {
 
 extension String {
 
-    var toInt: Int? {
+    var fromXMLToInt: Int? {
         return Int(self)
     }
-    var toBool: Bool? {
+    var fromXMLToBool: Bool? {
+        if self == "YES" {
+            return true
+        }
         return Bool(self)
     }
 }

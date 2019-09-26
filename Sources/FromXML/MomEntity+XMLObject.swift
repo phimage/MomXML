@@ -18,7 +18,7 @@ extension MomEntity: XMLObject {
 
         self.init(name: name, representedClassName: representedClassName, codeGenerationType: codeGenerationType)
 
-        self.syncable = element.attribute(by: "syncable")?.text.toBool ?? false
+        self.syncable = element.attribute(by: "syncable")?.text.fromXMLToBool ?? false
 
         for xml in xml.children {
             if let object = MomAttribute(xml: xml) {
