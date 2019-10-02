@@ -57,6 +57,8 @@ extension NSDeleteRule {
             return .cascade
         case .denyDeleteRule:
             return .deny
+        @unknown default:
+            fatalError("Unknown rules \(self). Must update MomXML library")
         }
     }
 }

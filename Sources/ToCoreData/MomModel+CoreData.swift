@@ -17,7 +17,7 @@ extension MomModel {
 
         let momEntityByName: [String: MomEntity] = self.momEntityByName
 
-        var coreDataEntitiesByName: [String: NSEntityDescription] = coreData.entitiesByName
+        let coreDataEntitiesByName: [String: NSEntityDescription] = coreData.entitiesByName
         for (name, coreDataEntity) in coreDataEntitiesByName {
             let momEntity: MomEntity? = momEntityByName[name]
 
