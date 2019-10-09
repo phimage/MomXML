@@ -20,6 +20,10 @@ extension MomEntity: XMLConvertible {
             output += fetchProperty.xml
             output += "\n"
         }
+        for fetchIndex in fetchIndexes {
+            output += fetchIndex.xml
+            output += "\n"
+        }
 
         if !userInfo.isEmpty {
             output += userInfo.xml

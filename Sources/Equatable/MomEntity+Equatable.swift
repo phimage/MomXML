@@ -35,6 +35,11 @@ extension MomEntity: Equatable {
         if lfetchProperties != rfetchProperties {
             return false
         }
+        let lfetchIndexes = lhs.fetchIndexes.sorted { $0.name < $1.name }
+        let rfetchIndexes = rhs.fetchIndexes.sorted { $0.name < $1.name }
+        if lfetchIndexes != rfetchIndexes {
+            return false
+        }
         if lhs.userInfo != rhs.userInfo {
             return false
         }

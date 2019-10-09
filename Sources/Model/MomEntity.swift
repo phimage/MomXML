@@ -24,6 +24,7 @@ public struct MomEntity {
     public var attributes: [MomAttribute] = []
     public var relationship: [MomRelationship] = []
     public var fetchProperties: [MomFetchedProperty] = []
+    public var fetchIndexes: [MomFetchIndex] = []
     // TODO MomCompoundIndex
     // TODO MomUniquenessConstraint
 }

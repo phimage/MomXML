@@ -16,7 +16,9 @@ extension MomEntity {
         coreData.name = self.name
         coreData.userInfo = self.userInfo.coreData
         coreData.properties = self.relationship.map { $0.coreData } + self.attributes.map { $0.coreData }
-
+        if #available(iOS 11.0, OSX 10.13, *) {
+            coreData.indexes = self.fetchIndexes.compactMap { $0.coreData(properties: coreData.propertiesByName) }
+        }
         return coreData
     }
 

@@ -27,10 +27,12 @@ extension MomEntity: XMLObject {
                 self.relationship.append(object)
             } else if let object = MomFetchedProperty(xml: xml) {
                 self.fetchProperties.append(object)
+            } else if let object = MomFetchIndex(xml: xml) {
+                self.fetchIndexes.append(object)
             } else if let object = MomUserInfo(xml: xml) {
                userInfo = object
             } else {
-                MomXML.orphanCallback?(xml, [MomAttribute.self, MomRelationship.self, MomUserInfo.self, MomFetchedProperty.self])
+                MomXML.orphanCallback?(xml, [MomAttribute.self, MomRelationship.self, MomUserInfo.self, MomFetchedProperty.self, MomFetchIndex.self])
             }
         }
 
