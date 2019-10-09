@@ -300,6 +300,9 @@ class MomXMLTests: XCTestCase {
                     for attr in entity.fetchProperties {
                         print("\(attr.name)  \(attr.fetchRequest.predicateString)")
                     }
+                    for attr in entity.fetchIndexes {
+                        print("\(attr.name)  \(attr.elements)")
+                    }
                 }
                 
                 for element in momElements {
@@ -344,6 +347,12 @@ class MomXMLTests: XCTestCase {
                     }
                     for attr in entity.relationship {
                         print("\(attr.name)  \(attr.destinationEntity)")
+                    }
+                    for attr in entity.fetchProperties {
+                        print("\(attr.name)  \(attr.fetchRequest.predicateString)")
+                    }
+                    for attr in entity.fetchIndexes {
+                        print("\(attr.name)  \(attr.elements)")
                     }
                 }
                 print("+++ elements :")

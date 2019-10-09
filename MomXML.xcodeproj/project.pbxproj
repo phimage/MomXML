@@ -66,6 +66,7 @@
 		48CF0841234DF91D001D4974 /* MomFetchIndex+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0837234DF20E001D4974 /* MomFetchIndex+Equatable.swift */; };
 		48CF0842234DF91F001D4974 /* MomFetchIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0835234DF177001D4974 /* MomFetchIndex.swift */; };
 		48CF0843234DF94A001D4974 /* MomFetchIndex+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0839234DF27F001D4974 /* MomFetchIndex+XMLConvertible.swift */; };
+		48CF0853234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0852234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift */; };
 		48E969271F98DA7C0001BF56 /* MomXMLiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E969251F98DA7C0001BF56 /* MomXMLiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E9692B1F98DAC40001BF56 /* MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8EA91EE834C500C854AA /* MomXML.swift */; };
 		48E9692C1F98DAC40001BF56 /* MomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E6B1EE81E2B00C854AA /* MomModel.swift */; };
@@ -185,6 +186,7 @@
 		48CF0839234DF27F001D4974 /* MomFetchIndex+XMLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MomFetchIndex+XMLConvertible.swift"; sourceTree = "<group>"; };
 		48CF083B234DF339001D4974 /* MomFetchIndex+FromXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MomFetchIndex+FromXML.swift"; sourceTree = "<group>"; };
 		48CF083D234DF65F001D4974 /* MomFetchIndex+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MomFetchIndex+CoreData.swift"; sourceTree = "<group>"; };
+		48CF0852234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFetchIndexPropertyDescription+MomXML.swift"; sourceTree = "<group>"; };
 		48E969231F98DA7C0001BF56 /* MomXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MomXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E969251F98DA7C0001BF56 /* MomXMLiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomXMLiOS.h; sourceTree = "<group>"; };
 		48E969261F98DA7C0001BF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				482BE8F01EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift */,
 				482BE8F21EEA918700BFD423 /* NSRelationshipDescription+MomXML.swift */,
 				4853CE3321DE5E6900869C1C /* NSFetchedPropertyDescription+MomXML.swift */,
+				48CF0852234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift */,
 			);
 			path = FromCoreData;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				484F8EAE1EE8355600C854AA /* MomXML+XMLObject.swift in Sources */,
 				897B743A1EEED635000E6560 /* MomAttribute+Equatable.swift in Sources */,
 				897B74341EEED426000E6560 /* MomUserInfo+Equatable.swift in Sources */,
+				48CF0853234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift in Sources */,
 				4816012A1EF81CFC0051BD89 /* MomUserInfo+CoreData.swift in Sources */,
 				484F8E861EE823E300C854AA /* MomElement+XMLConvertible.swift in Sources */,
 				484F8E851EE823E300C854AA /* MomAttribute+XMLConvertible.swift in Sources */,
@@ -929,6 +933,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.MomXMLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -947,6 +952,7 @@
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.MomXMLTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -12,12 +12,16 @@ extension MomFetchIndex: XMLConvertible {
 
     public var xml: String {
         var output = ""
-        output += " <fetchIndex name=\"\(self.name)\">\n"
-        for element in elements {
-            output += element.xml
-            output += "\n"
+        if isEmpty {
+            output += " <fetchIndex name=\"\(self.name)\"/>\n"
+        } else {
+            output += " <fetchIndex name=\"\(self.name)\">\n"
+            for element in elements {
+                output += element.xml
+                output += "\n"
+            }
+            output += " </fetchIndex>"
         }
-        output += " </fetchIndex>"
 
         return output
     }

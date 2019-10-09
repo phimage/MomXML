@@ -37,7 +37,7 @@ extension MomFetchIndexElement: XMLObject {
             return nil
         }
         guard let typeString =  element.attribute(by: "type")?.text,
-            let type = MomFetchIndexElementType(rawValue: typeString),
+            let type = MomFetchIndexElementType(rawValue: typeString.lowercased()),
             let order = element.attribute(by: "order")?.text else {
                 return nil
         }

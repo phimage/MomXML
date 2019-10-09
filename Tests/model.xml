@@ -6,6 +6,9 @@
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="client_commande" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_client" inverseEntity="Commande" syncable="YES"/>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement expression="1" expressionType="String" type="Binary" order="ascending"/>
+        </fetchIndex>
     </entity>
     <entity name="Commande" representedClassName="Commande" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,6 +21,11 @@
                 <entry key="key1" value="value"/>
             </userInfo>
         </relationship>
+        <fetchIndex name="byPropertyIndex">
+            <fetchIndexElement property="id" type="Binary" order="ascending"/>
+            <fetchIndexElement property="note" type="Binary" order="descending"/>
+        </fetchIndex>
+        <fetchIndex name="byPropertyIndex1"/>
     </entity>
     <entity name="Produit" representedClassName="Produit" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES">

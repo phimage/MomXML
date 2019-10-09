@@ -21,8 +21,9 @@ public struct MomFetchIndex {
         return elements.isEmpty
     }
 
-    public init(name: String) {
+    public init(name: String, elements: [MomFetchIndexElement] = []) {
         self.name = name
+        self.elements = elements
     }
 
 }
