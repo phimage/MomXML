@@ -22,6 +22,7 @@ extension MomAttribute {
         }
         coreData.isIndexedBySpotlight = self.isIndexedBySpotlight
         coreData.userInfo = self.userInfo.coreData
+        coreData.valueTransformerName = self.valueTransformerName
 
         return coreData
     }

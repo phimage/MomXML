@@ -41,6 +41,10 @@ extension MomAttribute: XMLConvertible {
 
         output += " syncable=\"\(syncable.xml)\""
 
+        if let valueTransformerName = valueTransformerName {
+            output += " valueTransformerName=\"\(valueTransformerName)\""
+        }
+
         if self.userInfo.isEmpty {
             output += "/>"
         } else {

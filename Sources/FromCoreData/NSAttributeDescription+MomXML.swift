@@ -24,7 +24,7 @@ extension NSAttributeDescription {
             mom.isIndexed = self.isIndexed
         }
         mom.isIndexedBySpotlight = self.isIndexedBySpotlight
-
+        mom.valueTransformerName =  self.valueTransformerName
        return mom
     }
 

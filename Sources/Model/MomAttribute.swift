@@ -22,6 +22,7 @@ public struct MomAttribute {
     public var isIndexedBySpotlight: Bool = false
     public var isDerived: Bool = false
     public var derivationExpression: String?
+    public var valueTransformerName: String?
 
     public var userInfo = MomUserInfo()
 

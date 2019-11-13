@@ -5,6 +5,12 @@
         <attribute name="attribut1" attributeType="String" optional="NO" indexed="YES" syncable="YES"/>
         <attribute name="attribut3" attributeType="Integer 16" optional="NO" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
         <attribute name="attribut2" attributeType="String" optional="NO" indexed="YES" syncable="YES"/>
+        <attribute attributeType="Transformable" indexed="NO" name="picture" optional="YES" syncable="YES" valueTransformerName="NSSecureUnarchiveFromData">
+          <userInfo>
+            <entry key="keyMapping" value="Picture field"/>
+            <entry key="image" value="YES"/>
+          </userInfo>
+        </attribute>
     </entity>
     <elements>
         <element name="Produit" positionX="0" positionY="0" width="128" height="230"/>

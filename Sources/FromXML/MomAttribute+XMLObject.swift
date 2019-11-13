@@ -29,6 +29,7 @@ extension MomAttribute: XMLObject {
         self.minValueString = element.attribute(by: "minValueString")?.text
         self.maxValueString = element.attribute(by: "maxValueString")?.text
         self.derivationExpression = element.attribute(by: "derivationExpression")?.text
+        self.valueTransformerName = element.attribute(by: "valueTransformerName")?.text
 
         for xml in xml.children {
             if let object = MomUserInfo(xml: xml) {
