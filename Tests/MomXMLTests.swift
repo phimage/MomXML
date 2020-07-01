@@ -271,7 +271,7 @@ class MomXMLTests: XCTestCase {
     // MARK: test from files
     
     func testXMLToMomModel1() {
-        if let url = Bundle(for: MomXMLTests.self).url(forResource: "model", withExtension: "xml") {
+        if let url = Fixture.url(forResource: "model", withExtension: "xml") {
             do {
                 let xmlString = try String(contentsOf: url)
                 let xml = SWXMLHash.parse(xmlString)
@@ -303,8 +303,15 @@ class MomXMLTests: XCTestCase {
                     for attr in entity.fetchIndexes {
                         print("\(attr.name)  \(attr.elements)")
                     }
+                    if let uniquenessConstraints = entity.uniquenessConstraints {
+                        for uniquenessConstraint in uniquenessConstraints.constraints {
+                            for constraint in uniquenessConstraint.constraints {
+                                print("\(constraint.value)")
+                            }
+                        }
+                    }
                 }
-                
+
                 for element in momElements {
                     elements.append(element)
                     print(element.name)
@@ -325,7 +332,7 @@ class MomXMLTests: XCTestCase {
         }
     }
     func testXMLToMomModel2() {
-        if let url = Bundle(for: MomXMLTests.self).url(forResource: "model2", withExtension: "xml") {
+        if let url = Fixture.url(forResource: "model2", withExtension: "xml") {
             do {
                 let xmlString = try String(contentsOf: url)
                 let xml = SWXMLHash.parse(xmlString)
@@ -376,7 +383,7 @@ class MomXMLTests: XCTestCase {
     }
     
     func testJsonToXML() {
-        if let url = Bundle(for: MomXMLTests.self).url(forResource: "modelJsonToXML", withExtension: "xml") {
+        if let url = Fixture.url(forResource: "modelJsonToXML", withExtension: "xml") {
             do {
                 let xmlString = try String(contentsOf: url)
                 let xml = SWXMLHash.parse(xmlString)
@@ -428,6 +435,11 @@ class MomXMLTests: XCTestCase {
 <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class">
 <attribute name="attribute1" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
 <relationship name="relationEntity1" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Entity2" inverseName="relationEntity2" inverseEntity="Entity2" syncable="YES"/>
+<uniquenessConstraints>
+    <uniquenessConstraint>
+        <constraint value="attribute1"/>
+    </uniquenessConstraint>
+</uniquenessConstraints>
 </entity>
 <entity name="Entity2" representedClassName="Entity2" syncable="YES" codeGenerationType="class">
 <relationship name="relationEntity2" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entity" inverseName="relationEntity1" inverseEntity="Entity" syncable="YES"/>
@@ -467,3 +479,16 @@ class MomXMLTests: XCTestCase {
     
 }
 
+struct Fixture {
+    static func url(forResource resource: String, withExtension ext: String) -> URL? {
+        if let  url = Bundle(for: MomXMLTests.self).url(forResource: resource, withExtension: ext) {
+            return url
+        }
+        var url = URL(fileURLWithPath: "Tests/\(resource).\(ext)")
+        if !FileManager.default.fileExists(atPath: url.path) {
+            let resourcesURL = URL(fileURLWithPath: #file)
+            url = resourcesURL.deletingLastPathComponent().appendingPathComponent(resource).appendingPathExtension(ext)
+        }
+        return url
+    }
+}

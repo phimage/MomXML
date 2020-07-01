@@ -51,6 +51,16 @@
         <attribute name="reps" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="warmup" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="iD"/>
+            </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="comma"/>
+                <constraint value="separated"/>
+                <constraint value="properties"/>
+             </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
         <attribute name="roundTo" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>

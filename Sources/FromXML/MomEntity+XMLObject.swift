@@ -31,8 +31,10 @@ extension MomEntity: XMLObject {
                 self.fetchIndexes.append(object)
             } else if let object = MomUserInfo(xml: xml) {
                userInfo = object
+            } else if let object = MomUniquenessConstraints(xml: xml) {
+               uniquenessConstraints = object
             } else {
-                MomXML.orphanCallback?(xml, [MomAttribute.self, MomRelationship.self, MomUserInfo.self, MomFetchedProperty.self, MomFetchIndex.self])
+                MomXML.orphanCallback?(xml, [MomAttribute.self, MomRelationship.self, MomUserInfo.self, MomFetchedProperty.self, MomFetchIndex.self, MomUniquenessConstraints.self])
             }
         }
 

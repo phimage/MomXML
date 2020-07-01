@@ -9,6 +9,11 @@
         <fetchIndex name="byPropertyIndex">
             <fetchIndexElement expression="1" expressionType="String" type="Binary" order="ascending"/>
         </fetchIndex>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Commande" representedClassName="Commande" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>

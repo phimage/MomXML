@@ -13,7 +13,7 @@ import CoreData
 extension NSFetchIndexDescription {
 
     public var mom: MomFetchIndex? {
-        return MomFetchIndex(name: self.name, elements: self.elements.compactMap { $0.mom } )
+        return MomFetchIndex(name: self.name, elements: self.elements.compactMap { $0.mom })
     }
 
 }

@@ -17,7 +17,9 @@ extension NSEntityDescription {
         if let userInfo = self.userInfo {
             mom.userInfo = MomUserInfo(userInfo: userInfo)
         }
-
+        if #available(iOS 9.0, OSX 10.11, *) {
+            mom.uniquenessConstraints = MomUniquenessConstraints(uniquenessConstraints: self.uniquenessConstraints)
+        }
         return mom
     }
 

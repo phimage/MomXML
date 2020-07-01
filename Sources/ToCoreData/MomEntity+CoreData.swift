@@ -19,6 +19,13 @@ extension MomEntity {
         if #available(iOS 11.0, OSX 10.13, *) {
             coreData.indexes = self.fetchIndexes.compactMap { $0.coreData(properties: coreData.propertiesByName) }
         }
+        if #available(iOS 9.0, OSX 10.11, *) {
+            let computed = self.uniquenessConstraints?.coreData ?? []
+            if !computed.isEmpty {
+                coreData.uniquenessConstraints = computed
+            }
+        }
+
         return coreData
     }
 

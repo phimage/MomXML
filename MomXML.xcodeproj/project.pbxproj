@@ -67,6 +67,15 @@
 		48CF0842234DF91F001D4974 /* MomFetchIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0835234DF177001D4974 /* MomFetchIndex.swift */; };
 		48CF0843234DF94A001D4974 /* MomFetchIndex+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0839234DF27F001D4974 /* MomFetchIndex+XMLConvertible.swift */; };
 		48CF0853234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF0852234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift */; };
+		48D5747324AC7D78007274FF /* MomUniquenessConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747224AC7D78007274FF /* MomUniquenessConstraints.swift */; };
+		48D5747524AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747424AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift */; };
+		48D5747624AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747424AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift */; };
+		48D5747824AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747724AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift */; };
+		48D5747924AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747724AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift */; };
+		48D5747B24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747A24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift */; };
+		48D5747C24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747A24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift */; };
+		48D5747E24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747D24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift */; };
+		48D5747F24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D5747D24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift */; };
 		48E969271F98DA7C0001BF56 /* MomXMLiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 48E969251F98DA7C0001BF56 /* MomXMLiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48E9692B1F98DAC40001BF56 /* MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8EA91EE834C500C854AA /* MomXML.swift */; };
 		48E9692C1F98DAC40001BF56 /* MomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E6B1EE81E2B00C854AA /* MomModel.swift */; };
@@ -187,6 +196,11 @@
 		48CF083B234DF339001D4974 /* MomFetchIndex+FromXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MomFetchIndex+FromXML.swift"; sourceTree = "<group>"; };
 		48CF083D234DF65F001D4974 /* MomFetchIndex+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MomFetchIndex+CoreData.swift"; sourceTree = "<group>"; };
 		48CF0852234E0010001D4974 /* NSFetchIndexPropertyDescription+MomXML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFetchIndexPropertyDescription+MomXML.swift"; sourceTree = "<group>"; };
+		48D5747224AC7D78007274FF /* MomUniquenessConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MomUniquenessConstraints.swift; sourceTree = "<group>"; };
+		48D5747424AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomUniquenessConstraints+Equatable.swift"; sourceTree = "<group>"; };
+		48D5747724AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomUniquenessConstraints+XMLConvertible.swift"; sourceTree = "<group>"; };
+		48D5747A24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomUniquenessConstraints+XML.swift"; sourceTree = "<group>"; };
+		48D5747D24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomUniquenessConstraints+CoreData.swift"; sourceTree = "<group>"; };
 		48E969231F98DA7C0001BF56 /* MomXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MomXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E969251F98DA7C0001BF56 /* MomXMLiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomXMLiOS.h; sourceTree = "<group>"; };
 		48E969261F98DA7C0001BF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,6 +250,7 @@
 		4816011E1EF815370051BD89 /* ToCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				48D5747D24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift */,
 				4816011F1EF8155E0051BD89 /* MomXml+CoreData.swift */,
 				481601231EF81C790051BD89 /* MomModel+CoreData.swift */,
 				481601251EF81C9D0051BD89 /* MomEntity+CoreData.swift */,
@@ -346,6 +361,7 @@
 				484F8E6D1EE81E2B00C854AA /* MomUserInfo.swift */,
 				48B60DFC21DE166F00FE4605 /* MomFetchedProperty.swift */,
 				48CF0835234DF177001D4974 /* MomFetchIndex.swift */,
+				48D5747224AC7D78007274FF /* MomUniquenessConstraints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 		484F8E7E1EE8235500C854AA /* ToXML */ = {
 			isa = PBXGroup;
 			children = (
+				48D5747724AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift */,
 				484F8E6E1EE81E2B00C854AA /* XMLConvertible.swift */,
 				484F8EAB1EE8350400C854AA /* MomXML+XMLConvertible.swift */,
 				484F8E821EE823E300C854AA /* MomModel+XMLConvertible.swift */,
@@ -370,6 +387,7 @@
 		484F8E8C1EE8253B00C854AA /* FromXML */ = {
 			isa = PBXGroup;
 			children = (
+				48D5747A24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift */,
 				484F8E8D1EE8256300C854AA /* XMLObject.swift */,
 				484F8EAD1EE8355600C854AA /* MomXML+XMLObject.swift */,
 				484F8E9E1EE82AAC00C854AA /* MomModel+XMLObject.swift */,
@@ -421,6 +439,7 @@
 				897B743B1EEED66B000E6560 /* MomElement+Equatable.swift */,
 				897B74371EEED5BF000E6560 /* MomRelationship+Equatable.swift */,
 				897B74331EEED426000E6560 /* MomUserInfo+Equatable.swift */,
+				48D5747424AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift */,
 				48B60DFE21DE17B600FE4605 /* MomFetchedProperty+Equatable.swift */,
 				48CF0837234DF20E001D4974 /* MomFetchIndex+Equatable.swift */,
 			);
@@ -622,6 +641,7 @@
 				48CF083A234DF27F001D4974 /* MomFetchIndex+XMLConvertible.swift in Sources */,
 				484F8E731EE81E2B00C854AA /* MomRelationship.swift in Sources */,
 				484F8E701EE81E2B00C854AA /* MomElement.swift in Sources */,
+				48D5747E24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift in Sources */,
 				484F8E6F1EE81E2B00C854AA /* MomAttribute.swift in Sources */,
 				484F8EAC1EE8350400C854AA /* MomXML+XMLConvertible.swift in Sources */,
 				482BE8ED1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift in Sources */,
@@ -636,7 +656,9 @@
 				48B60DFF21DE17B600FE4605 /* MomFetchedProperty+Equatable.swift in Sources */,
 				48B60E0321DE1AAB00FE4605 /* MomFetchedProperty+XMLObject.swift in Sources */,
 				482BE8F11EEA8ECF00BFD423 /* NSAttributeDescription+MomXML.swift in Sources */,
+				48D5747B24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift in Sources */,
 				897B74361EEED5A2000E6560 /* MomEntity+Equatable.swift in Sources */,
+				48D5747524AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift in Sources */,
 				484F8E711EE81E2B00C854AA /* MomEntity.swift in Sources */,
 				48CF0838234DF20E001D4974 /* MomFetchIndex+Equatable.swift in Sources */,
 				897B743E1EEED6B3000E6560 /* MomModel+Equatable.swift in Sources */,
@@ -646,6 +668,7 @@
 				484F8EA11EE82AAC00C854AA /* MomAttribute+XMLObject.swift in Sources */,
 				484F8E891EE823E300C854AA /* MomRelationship+XMLConvertible.swift in Sources */,
 				484F8E8B1EE8247D00C854AA /* XMLConvertible.swift in Sources */,
+				48D5747324AC7D78007274FF /* MomUniquenessConstraints.swift in Sources */,
 				484F8E871EE823E300C854AA /* MomEntity+XMLConvertible.swift in Sources */,
 				484F8EA31EE82AAC00C854AA /* MomEntity+XMLObject.swift in Sources */,
 				484F8EA41EE82AAC00C854AA /* MomModel+XMLObject.swift in Sources */,
@@ -663,6 +686,7 @@
 				484F8E861EE823E300C854AA /* MomElement+XMLConvertible.swift in Sources */,
 				484F8E851EE823E300C854AA /* MomAttribute+XMLConvertible.swift in Sources */,
 				484F8EA61EE82AAC00C854AA /* MomUserInfo+XMLObject.swift in Sources */,
+				48D5747824AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift in Sources */,
 				48B60E0521DE1E5100FE4605 /* MomFetchedProperty+CoreData.swift in Sources */,
 				481601201EF8155E0051BD89 /* MomXml+CoreData.swift in Sources */,
 				48CF0836234DF177001D4974 /* MomFetchIndex.swift in Sources */,
@@ -688,6 +712,7 @@
 				48B60E0821DE20AB00FE4605 /* MomFetchedProperty.swift in Sources */,
 				48E9693B1F98DAC90001BF56 /* MomModel+XMLConvertible.swift in Sources */,
 				48E9694D1F98DACF0001BF56 /* MomRelationship+CoreData.swift in Sources */,
+				48D5747624AC8EB2007274FF /* MomUniquenessConstraints+Equatable.swift in Sources */,
 				48E9692B1F98DAC40001BF56 /* MomXML.swift in Sources */,
 				48CF083F234DF90B001D4974 /* MomFetchIndex+CoreData.swift in Sources */,
 				48FDA65D22E84E8B0073A4FF /* NSAttributeDescription+MomXML.swift in Sources */,
@@ -698,8 +723,10 @@
 				48E969471F98DACC0001BF56 /* MomRelationship+XMLObject.swift in Sources */,
 				48E969351F98DAC60001BF56 /* MomAttribute+Equatable.swift in Sources */,
 				48E969301F98DAC40001BF56 /* MomRelationship.swift in Sources */,
+				48D5747C24AC8ED5007274FF /* MomUniquenessConstraints+XML.swift in Sources */,
 				48FDA65F22E84E8B0073A4FF /* NSFetchedPropertyDescription+MomXML.swift in Sources */,
 				48B60E0A21DE20B200FE4605 /* MomFetchedProperty+XMLConvertible.swift in Sources */,
+				48D5747F24AC8EE2007274FF /* MomUniquenessConstraints+CoreData.swift in Sources */,
 				48B60E0921DE20AF00FE4605 /* MomFetchedProperty+Equatable.swift in Sources */,
 				48B60E0B21DE20C500FE4605 /* MomFetchedProperty+XMLObject.swift in Sources */,
 				48E969321F98DAC60001BF56 /* MomXML+Equatable.swift in Sources */,
@@ -718,6 +745,7 @@
 				48E9693A1F98DAC90001BF56 /* MomXML+XMLConvertible.swift in Sources */,
 				48E969481F98DACC0001BF56 /* MomUserInfo+XMLObject.swift in Sources */,
 				48E9694B1F98DACF0001BF56 /* MomEntity+CoreData.swift in Sources */,
+				48D5747924AC8ECC007274FF /* MomUniquenessConstraints+XMLConvertible.swift in Sources */,
 				48CF0842234DF91F001D4974 /* MomFetchIndex.swift in Sources */,
 				48CF0843234DF94A001D4974 /* MomFetchIndex+XMLConvertible.swift in Sources */,
 				48E9692F1F98DAC40001BF56 /* MomElement.swift in Sources */,

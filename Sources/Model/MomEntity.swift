@@ -11,6 +11,7 @@ public struct MomEntity {
     public var syncable: Bool = true
     public var codeGenerationType: String
     public var userInfo = MomUserInfo()
+    public var uniquenessConstraints: MomUniquenessConstraints?
 
     //TODO public var elementID: String?
     //TODO public var versionHashModifier: String?
@@ -25,8 +26,7 @@ public struct MomEntity {
     public var relationship: [MomRelationship] = []
     public var fetchProperties: [MomFetchedProperty] = []
     public var fetchIndexes: [MomFetchIndex] = []
-    // TODO MomCompoundIndex
-    // TODO MomUniquenessConstraint
+    // TODO MomCompoundIndex (deprecated)
 }
 
 extension MomEntity {
