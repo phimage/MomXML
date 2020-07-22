@@ -41,6 +41,10 @@ extension MomModel {
             }
         }
 
+        for configuration in self.configurations {
+            coreData.setEntities(configuration.memberEntities.compactMap { coreDataEntitiesByName[$0.name] }, forConfigurationName: configuration.name)
+        }
+
         return coreData
     }
 

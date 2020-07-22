@@ -16,6 +16,7 @@ public struct MomModel {
 
     public var entities: [MomEntity] = []
     public var elements: [MomElement] = []
+    public var configurations: [MomConfiguration] = []
 
     public init() {}
 }
