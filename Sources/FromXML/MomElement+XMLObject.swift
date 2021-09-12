@@ -6,7 +6,8 @@ import Foundation
 
 extension MomElement: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         guard let element = xml.element, element.name == "element" else {
             return nil
         }

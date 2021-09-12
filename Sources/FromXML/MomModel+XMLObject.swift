@@ -6,8 +6,8 @@ import Foundation
 
 extension MomModel: XMLObject {
 
-    public init?(xml: XML) {
-        guard let element = xml.element, element.name == "model" else {
+    public init?(xml: XML?) {
+        guard let element = xml?.element, element.name == "model" else {
             return nil
         }
 
@@ -17,11 +17,11 @@ extension MomModel: XMLObject {
         minimumToolsVersion = element.attribute(by: "minimumToolsVersion")?.text ?? minimumToolsVersion
         userDefinedModelVersionIdentifier = element.attribute(by: "userDefinedModelVersionIdentifier")?.text ?? userDefinedModelVersionIdentifier
 
-        for xmlChildren in xml.children {
+        for xmlChildren in xml?.children ?? [] {
             if let entity = MomEntity(xml: xmlChildren) {
                 self.entities.append(entity)
             } else if xmlChildren.element?.name == "elements" {
-                for xmlSubChildren in xmlChildren.children {
+                for xmlSubChildren in xmlChildren.children ?? [] {
                     if let element = MomElement(xml: xmlSubChildren) {
                         self.elements.append(element)
                     } else {

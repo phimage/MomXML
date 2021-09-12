@@ -6,9 +6,10 @@ import Foundation
 
 extension MomXML: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         var hasModel = false
-        for child in xml.children {
+        for child in xml.children ?? [] {
             if let model = MomModel(xml: child) {
                 self.model = model
                 hasModel = true

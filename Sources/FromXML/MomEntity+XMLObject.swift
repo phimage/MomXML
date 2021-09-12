@@ -6,8 +6,9 @@ import Foundation
 
 extension MomEntity: XMLObject {
 
-    public init?(xml: XML) {
-        guard let element = xml.element, element.name == "entity" else {
+    public init?(xml: XML?) {
+       guard let xml = xml else { return nil }
+       guard let element = xml.element, element.name == "entity" else {
             return nil
         }
         guard let name = element.attribute(by: "name")?.text,
@@ -20,7 +21,7 @@ extension MomEntity: XMLObject {
 
         self.syncable = element.attribute(by: "syncable")?.text.fromXMLToBool ?? false
 
-        for xml in xml.children {
+        for xml in xml.children ?? [] {
             if let object = MomAttribute(xml: xml) {
                 self.attributes.append(object)
             } else if let object = MomRelationship(xml: xml) {

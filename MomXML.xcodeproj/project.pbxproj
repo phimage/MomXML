@@ -27,7 +27,6 @@
 		484F8E721EE81E2B00C854AA /* MomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E6B1EE81E2B00C854AA /* MomModel.swift */; };
 		484F8E731EE81E2B00C854AA /* MomRelationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E6C1EE81E2B00C854AA /* MomRelationship.swift */; };
 		484F8E741EE81E2B00C854AA /* MomUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E6D1EE81E2B00C854AA /* MomUserInfo.swift */; };
-		484F8E781EE822A600C854AA /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484F8E771EE822A600C854AA /* SWXMLHash.framework */; };
 		484F8E851EE823E300C854AA /* MomAttribute+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E7F1EE823E300C854AA /* MomAttribute+XMLConvertible.swift */; };
 		484F8E861EE823E300C854AA /* MomElement+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E801EE823E300C854AA /* MomElement+XMLConvertible.swift */; };
 		484F8E871EE823E300C854AA /* MomEntity+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E811EE823E300C854AA /* MomEntity+XMLConvertible.swift */; };
@@ -42,7 +41,6 @@
 		484F8EA41EE82AAC00C854AA /* MomModel+XMLObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E9E1EE82AAC00C854AA /* MomModel+XMLObject.swift */; };
 		484F8EA51EE82AAC00C854AA /* MomRelationship+XMLObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8E9F1EE82AAC00C854AA /* MomRelationship+XMLObject.swift */; };
 		484F8EA61EE82AAC00C854AA /* MomUserInfo+XMLObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8EA01EE82AAC00C854AA /* MomUserInfo+XMLObject.swift */; };
-		484F8EA81EE8341100C854AA /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484F8E771EE822A600C854AA /* SWXMLHash.framework */; };
 		484F8EAA1EE834C500C854AA /* MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8EA91EE834C500C854AA /* MomXML.swift */; };
 		484F8EAC1EE8350400C854AA /* MomXML+XMLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8EAB1EE8350400C854AA /* MomXML+XMLConvertible.swift */; };
 		484F8EAE1EE8355600C854AA /* MomXML+XMLObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F8EAD1EE8355600C854AA /* MomXML+XMLObject.swift */; };
@@ -122,7 +120,6 @@
 		48E9694C1F98DACF0001BF56 /* MomAttribute+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601211EF81C590051BD89 /* MomAttribute+CoreData.swift */; };
 		48E9694D1F98DACF0001BF56 /* MomRelationship+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601271EF81CB70051BD89 /* MomRelationship+CoreData.swift */; };
 		48E9694E1F98DACF0001BF56 /* MomUserInfo+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481601291EF81CFC0051BD89 /* MomUserInfo+CoreData.swift */; };
-		48E969551F98DB220001BF56 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48E969541F98DB160001BF56 /* SWXMLHash.framework */; };
 		48FDA65922E84E800073A4FF /* MomFetchedProperty+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B60E0421DE1E5100FE4605 /* MomFetchedProperty+CoreData.swift */; };
 		48FDA65B22E84E8B0073A4FF /* NSManagedObjectModel+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8EE1EEA8DA500BFD423 /* NSManagedObjectModel+MomXML.swift */; };
 		48FDA65C22E84E8B0073A4FF /* NSEntityDescription+MomXML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482BE8EC1EEA8D9000BFD423 /* NSEntityDescription+MomXML.swift */; };
@@ -176,7 +173,6 @@
 		484F8E6C1EE81E2B00C854AA /* MomRelationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomRelationship.swift; sourceTree = "<group>"; };
 		484F8E6D1EE81E2B00C854AA /* MomUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomUserInfo.swift; sourceTree = "<group>"; };
 		484F8E6E1EE81E2B00C854AA /* XMLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLConvertible.swift; sourceTree = "<group>"; };
-		484F8E771EE822A600C854AA /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
 		484F8E7F1EE823E300C854AA /* MomAttribute+XMLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomAttribute+XMLConvertible.swift"; sourceTree = "<group>"; };
 		484F8E801EE823E300C854AA /* MomElement+XMLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomElement+XMLConvertible.swift"; sourceTree = "<group>"; };
 		484F8E811EE823E300C854AA /* MomEntity+XMLConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomEntity+XMLConvertible.swift"; sourceTree = "<group>"; };
@@ -217,7 +213,6 @@
 		48E969231F98DA7C0001BF56 /* MomXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MomXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E969251F98DA7C0001BF56 /* MomXMLiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MomXMLiOS.h; sourceTree = "<group>"; };
 		48E969261F98DA7C0001BF56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		48E969541F98DB160001BF56 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 		897B74331EEED426000E6560 /* MomUserInfo+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomUserInfo+Equatable.swift"; sourceTree = "<group>"; };
 		897B74351EEED5A2000E6560 /* MomEntity+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomEntity+Equatable.swift"; sourceTree = "<group>"; };
 		897B74371EEED5BF000E6560 /* MomRelationship+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MomRelationship+Equatable.swift"; sourceTree = "<group>"; };
@@ -236,7 +231,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				484F8E781EE822A600C854AA /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +239,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				484F8E561EE81D8900C854AA /* MomXML.framework in Frameworks */,
-				484F8EA81EE8341100C854AA /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +246,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48E969551F98DB220001BF56 /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +286,6 @@
 			children = (
 				484F8E671EE81DED00C854AA /* Sources */,
 				484F8E661EE81D8E00C854AA /* Xcode */,
-				484F8E791EE822B000C854AA /* Frameworks */,
 				484F8E591EE81D8900C854AA /* Tests */,
 				484F8E4D1EE81D8800C854AA /* Products */,
 			);
@@ -343,23 +334,6 @@
 				482BE8EB1EEA8D5C00BFD423 /* FromCoreData */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		484F8E791EE822B000C854AA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				48E969531F98DAF70001BF56 /* iOS */,
-				484F8E7A1EE822B900C854AA /* MacOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		484F8E7A1EE822B900C854AA /* MacOS */ = {
-			isa = PBXGroup;
-			children = (
-				484F8E771EE822A600C854AA /* SWXMLHash.framework */,
-			);
-			name = MacOS;
 			sourceTree = "<group>";
 		};
 		484F8E7D1EE8234500C854AA /* Model */ = {
@@ -435,14 +409,6 @@
 				48E969261F98DA7C0001BF56 /* Info.plist */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		48E969531F98DAF70001BF56 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				48E969541F98DB160001BF56 /* SWXMLHash.framework */,
-			);
-			name = iOS;
 			sourceTree = "<group>";
 		};
 		897B74321EEED40E000E6560 /* Equatable */ = {
@@ -548,7 +514,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = phimage;
 				TargetAttributes = {
 					484F8E4B1EE81D8800C854AA = {
@@ -830,6 +796,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -893,6 +860,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1032,7 +1000,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Xcode/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.MomXMLiOS;
 				PRODUCT_NAME = MomXML;
@@ -1062,7 +1030,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Xcode/iOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.phimage.MomXMLiOS;
 				PRODUCT_NAME = MomXML;

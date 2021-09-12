@@ -10,8 +10,10 @@ import Foundation
 
 extension MomFetchIndex: XMLObject {
 
-    public init?(xml: XML) {
-        guard let element = xml.element, element.name == "fetchIndex" else {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
+        guard let element = (xml as? XMLElement),
+              element.name == "fetchIndex" else {
             return nil
         }
         guard let name = element.attribute(by: "name")?.text else {
@@ -19,7 +21,7 @@ extension MomFetchIndex: XMLObject {
         }
         self.init(name: name)
 
-        for child in xml.children {
+        for child in xml.children ?? [] {
             if let entry = MomFetchIndexElement(xml: child) {
                 self.elements.append(entry)
             } else {
@@ -32,7 +34,8 @@ extension MomFetchIndex: XMLObject {
 
 extension MomFetchIndexElement: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         guard let element = xml.element, element.name == "fetchIndexElement" else {
             return nil
         }

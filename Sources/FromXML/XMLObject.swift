@@ -3,16 +3,12 @@
 //
 
 import Foundation
-#if USESOURCE
-#else
-    import SWXMLHash
-#endif
-public typealias XML = XMLIndexer
+
+public typealias XML = XMLNode
 
 public protocol XMLObject {
 
-    init?(xml: XML)
-
+    init?(xml: XML?)
 }
 
 extension String {
@@ -25,5 +21,26 @@ extension String {
             return true
         }
         return Bool(self)
+    }
+}
+
+// jmj
+extension XMLNode {
+    var element: XMLElement? {
+        self as? XMLElement
+    }
+    
+//    func attribute(by name: String) -> XMLElement {
+//        self.attribute(fromName: name)
+//    }
+}
+
+extension XMLElement {
+    var text: String {
+        self.stringValue ?? ""
+    }
+
+    func attribute(by name: String) -> XMLElement? {
+        self.attribute(forName: name) as? XMLElement
     }
 }

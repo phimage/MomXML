@@ -25,7 +25,6 @@ Pod::Spec.new do |s|
   s.subspec "FromXML" do  |sp|
     sp.source_files = "Sources/FromXML/*.swift"
     sp.dependency 'MomXML/Model'
-    sp.dependency 'SWXMLHash'
   end
 
   s.subspec "ToXML" do  |sp|

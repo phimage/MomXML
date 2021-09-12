@@ -6,11 +6,12 @@ import Foundation
 
 extension MomFetchedProperty: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         guard let element = xml.element, element.name == "fetchedProperty" else {
             return nil
         }
-        guard let fetchRequest = xml.children.compactMap({ MomFetchRequest(xml: $0) }).first else {
+        guard let fetchRequest = xml.children?.compactMap({ MomFetchRequest(xml: $0) }).first else {
             return nil
         }
         guard let name = element.attribute(by: "name")?.text else {
@@ -21,7 +22,7 @@ extension MomFetchedProperty: XMLObject {
         self.isOptional = element.attribute(by: "optional")?.text.fromXMLToBool ?? false
         self.syncable = element.attribute(by: "syncable")?.text.fromXMLToBool ?? false
 
-        for child in xml.children {
+        for child in xml.children ?? [] {
             if MomFetchRequest(xml: child) != nil {
                 // ignore
             } else if let object = MomUserInfo(xml: xml) {
@@ -36,7 +37,8 @@ extension MomFetchedProperty: XMLObject {
 
 extension MomFetchRequest: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         guard let element = xml.element, element.name == "fetchRequest" else {
             return nil
         }

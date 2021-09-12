@@ -11,13 +11,13 @@ let package = Package(
             targets: ["MomXML"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/drmohundro/SWXMLHash.git", from: "5.0.1")
+//        .package(url: "https://github.com/drmohundro/SWXMLHash.git", from: "5.0.1")
     ],
     targets: [
         .target(
             name: "MomXML",
             dependencies: [
-                "SWXMLHash"
+ //               "SWXMLHash"
             ],
             path: "Sources"),
         .testTarget(

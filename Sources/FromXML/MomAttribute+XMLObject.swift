@@ -6,8 +6,10 @@ import Foundation
 
 extension MomAttribute: XMLObject {
 
-    public init?(xml: XML) {
-        guard let element = xml.element, element.name == "attribute" else {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
+        guard let element = xml.element,
+                  element.name == "attribute" else {
             return nil
         }
         guard let name = element.attribute(by: "name")?.text,
@@ -31,7 +33,7 @@ extension MomAttribute: XMLObject {
         self.derivationExpression = element.attribute(by: "derivationExpression")?.text
         self.valueTransformerName = element.attribute(by: "valueTransformerName")?.text
 
-        for xml in xml.children {
+        for xml in xml.children ?? [] {
             if let object = MomUserInfo(xml: xml) {
                 userInfo = object
             } else {

@@ -2,7 +2,8 @@ import Foundation
 
 extension MomConfiguration: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         guard let element = xml.element, element.name == "configuration" else {
             return nil
         }
@@ -10,7 +11,7 @@ extension MomConfiguration: XMLObject {
                 return nil
         }
         var memberEntities: [MomMemberEntity] = []
-        for child in xml.children {
+        for child in xml.children ?? [] {
             if let object = MomMemberEntity(xml: child) {
                 memberEntities.append(object)
             } else {
@@ -24,7 +25,8 @@ extension MomConfiguration: XMLObject {
 
 extension MomMemberEntity: XMLObject {
 
-    public init?(xml: XML) {
+    public init?(xml: XML?) {
+        guard let xml = xml else { return nil }
         guard let element = xml.element, element.name == "memberEntity" else {
             return nil
         }

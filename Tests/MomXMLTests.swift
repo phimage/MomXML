@@ -8,7 +8,13 @@
 
 import XCTest
 @testable import MomXML
-import SWXMLHash
+
+struct SWXMLHash {
+    static func parse(_ str: String) -> XMLNode? {
+        let xml = try? XMLDocument(xmlString: str, options: [])
+        return xml?.rootDocument
+    }
+}
 
 class MomXMLTests: XCTestCase {
 
