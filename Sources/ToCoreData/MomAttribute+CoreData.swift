@@ -11,7 +11,12 @@ import CoreData
 
 extension MomAttribute {
     public var coreData: NSAttributeDescription {
-        let coreData = NSAttributeDescription()
+        let coreData: NSAttributeDescription
+        if #available(iOS 13.0, *), #available(macOS 10.15, *) {
+            coreData = isDerived ? NSDerivedAttributeDescription(): NSAttributeDescription()
+        } else {
+            coreData = NSAttributeDescription()
+        }
         coreData.attributeType = self.attributeType.coreData
         coreData.name = self.name
         coreData.isOptional = self.isOptional
@@ -23,6 +28,12 @@ extension MomAttribute {
         coreData.isIndexedBySpotlight = self.isIndexedBySpotlight
         coreData.userInfo = self.userInfo.coreData
         coreData.valueTransformerName = self.valueTransformerName
+
+        if #available(iOS 13.0, *), #available(macOS 10.15, *) {
+            if let derivationExpression = self.derivationExpression, let derivedCoreData = coreData as? NSDerivedAttributeDescription {
+                derivedCoreData.derivationExpression = NSExpression(format: derivationExpression)
+            }
+        }
 
         return coreData
     }
