@@ -23,6 +23,8 @@ public struct MomAttribute {
     public var isDerived: Bool = false
     public var derivationExpression: String?
     public var valueTransformerName: String?
+    public var customClassName: String?
+    public var composite: String?
 
     public var userInfo = MomUserInfo()
 
@@ -49,6 +51,7 @@ public struct MomAttribute {
         case objectID = "ObjectID"
         case uuid = "UUID"
         case uri = "URI"
+        case composite = "Composite"
     }
 
 }

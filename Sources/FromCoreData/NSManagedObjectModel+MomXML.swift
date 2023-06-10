@@ -17,6 +17,7 @@ extension NSManagedObjectModel {
         mom.entities = self.entities.map { $0.mom }
         mom.elements = self.entities.map { $0.momElement }
         mom.configurations = self.configurations.map { MomConfiguration(name: $0, memberEntities: []) }
+       // mom.composites = ??
 
         for var configuration in mom.configurations {
             if let entities = self.entities(forConfigurationName: configuration.name) {

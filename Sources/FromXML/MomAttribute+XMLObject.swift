@@ -30,6 +30,8 @@ extension MomAttribute: XMLObject {
         self.maxValueString = element.attribute(by: "maxValueString")?.text
         self.derivationExpression = element.attribute(by: "derivationExpression")?.text
         self.valueTransformerName = element.attribute(by: "valueTransformerName")?.text
+        self.customClassName = element.attribute(by: "customClassName")?.text
+        self.composite = element.attribute(by: "composite")?.text
 
         for xml in xml.children {
             if let object = MomUserInfo(xml: xml) {

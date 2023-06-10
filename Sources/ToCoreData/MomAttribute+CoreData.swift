@@ -28,6 +28,9 @@ extension MomAttribute {
         coreData.isIndexedBySpotlight = self.isIndexedBySpotlight
         coreData.userInfo = self.userInfo.coreData
         coreData.valueTransformerName = self.valueTransformerName
+        if let customClassName = self.customClassName {
+            coreData.attributeValueClassName = customClassName // cannot set nil
+        }
 
         if #available(iOS 13.0, *), #available(macOS 10.15, *) {
             if let derivationExpression = self.derivationExpression, let derivedCoreData = coreData as? NSDerivedAttributeDescription {
@@ -69,6 +72,12 @@ extension MomAttribute.AttributeType {
             return .undefinedAttributeType
         case .objectID:
             return .objectIDAttributeType
+        case .composite:
+            if #available(iOS 17, *), #available(macOS 14.0, *) {
+                return .compositeAttributeType
+            } else {
+                return .undefinedAttributeType
+            }
         default:
             if #available(iOS 11, *), #available(macOS 10.13, *) {
                 switch self {

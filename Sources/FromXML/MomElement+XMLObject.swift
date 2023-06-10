@@ -16,7 +16,7 @@ extension MomElement: XMLObject {
             let width = element.attribute(by: "width")?.text.fromXMLToInt else {
                 return nil
         }
-        let height = element.attribute(by: "height")?.text.fromXMLToInt ?? 0 //optional
+        let height = element.attribute(by: "height")?.text.fromXMLToInt ?? 0 // optional
         self.init(name: name, positionX: positionX, positionY: positionY, width: width, height: height)
     }
 

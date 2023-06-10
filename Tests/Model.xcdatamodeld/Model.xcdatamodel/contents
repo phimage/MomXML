@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22158.8" systemVersion="23A5257q" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Client" representedClassName="Client" syncable="YES" codeGenerationType="class">
-        <attribute name="firstname" optional="YES" attributeType="String" syncable="YES">
+        <attribute name="firstname" optional="YES" attributeType="String">
             <userInfo>
                 <entry key="key" value="value"/>
             </userInfo>
         </attribute>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES">
             <userInfo>
                 <entry key="key" value="value"/>
                 <entry key="key1" value="value"/>
             </userInfo>
         </attribute>
-        <attribute name="lastname" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="client_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_client" inverseEntity="Commande" syncable="YES"/>
+        <attribute name="lastname" optional="YES" attributeType="String"/>
+        <relationship name="client_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_client" inverseEntity="Commande"/>
         <userInfo>
             <entry key="key" value="value"/>
             <entry key="key1" value="value"/>
         </userInfo>
     </entity>
     <entity name="Commande" representedClassName="Commande" syncable="YES" codeGenerationType="class">
-        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="commande_client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="client_commande" inverseEntity="Client" syncable="YES"/>
-        <relationship name="commande_produit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Produit" inverseName="produit_commande" inverseEntity="Produit" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <relationship name="commande_client" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Client" inverseName="client_commande" inverseEntity="Client"/>
+        <relationship name="commande_produit" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Produit" inverseName="produit_commande" inverseEntity="Produit">
             <userInfo>
                 <entry key="key" value="value"/>
                 <entry key="key1" value="value"/>
@@ -32,10 +32,12 @@
         </relationship>
     </entity>
     <entity name="Produit" representedClassName="Produit" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="prix" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="reference" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="produit_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_produit" inverseEntity="Commande" syncable="YES">
+        <attribute name="attribute" optional="YES" attributeType="Transformable" customClassName="CustomClass"/>
+        <attribute name="attribute1" optional="YES" attributeType="Composite" composite="Composite"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="prix" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+        <relationship name="produit_commande" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Commande" inverseName="commande_produit" inverseEntity="Commande">
             <userInfo>
                 <entry key="key" value="value"/>
                 <entry key="key1" value="value"/>
@@ -45,9 +47,10 @@
             <entry key="key" value="value"/>
         </userInfo>
     </entity>
-    <elements>
-        <element name="Client" positionX="-236" positionY="-27" width="128" height="105"/>
-        <element name="Commande" positionX="-45" positionY="-144" width="128" height="118"/>
-        <element name="Produit" positionX="153" positionY="-54" width="128" height="103"/>
-    </elements>
+    <composite name="Composite">
+        <attribute name="one" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="two" optional="YES" attributeType="String"/>
+        <attribute name="three" optional="YES" attributeType="Composite" composite="Composite1"/>
+    </composite>
+    <composite name="Composite1"/>
 </model>

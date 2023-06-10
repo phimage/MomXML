@@ -13,8 +13,8 @@ public struct MomEntity {
     public var userInfo = MomUserInfo()
     public var uniquenessConstraints: MomUniquenessConstraints?
 
-    //TODO public var elementID: String?
-    //TODO public var versionHashModifier: String?
+    // TODO public var elementID: String?
+    // TODO public var versionHashModifier: String?
 
     public init(name: String, representedClassName: String? = nil, codeGenerationType: String = "class") {
         self.name = name

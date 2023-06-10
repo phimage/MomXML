@@ -25,6 +25,7 @@ extension NSAttributeDescription {
         }
         mom.isIndexedBySpotlight = self.isIndexedBySpotlight
         mom.valueTransformerName =  self.valueTransformerName
+        mom.customClassName = self.attributeValueClassName
        return mom
     }
 
@@ -63,6 +64,8 @@ extension NSAttributeType {
             return .undefined
         case .objectIDAttributeType:
             return .objectID
+        case .compositeAttributeType:
+            return .composite
         default:
             if #available(iOS 11, *), #available(macOS 10.13, *) {
                 switch self {
