@@ -9,6 +9,7 @@
 import XCTest
 @testable import MomXML
 import SWXMLHash
+typealias SWXMLHash = XMLHash
 
 class MomXMLTests: XCTestCase {
 
@@ -482,6 +483,9 @@ class MomXMLTests: XCTestCase {
 struct Fixture {
     static func url(forResource resource: String, withExtension ext: String) -> URL? {
         if let  url = Bundle(for: MomXMLTests.self).url(forResource: resource, withExtension: ext) {
+            return url
+        }
+        if let  url = Bundle.module.url(forResource: resource, withExtension: ext) {
             return url
         }
         var url = URL(fileURLWithPath: "Tests/\(resource).\(ext)")

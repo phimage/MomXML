@@ -23,5 +23,9 @@ extension MomXML: XMLObject {
 }
 
 extension MomXML {
+#if swift(>=6.0)
+    nonisolated(unsafe) public static var orphanCallback: ((XML, Any) -> Void)?
+#else
     public static var orphanCallback: ((XML, Any) -> Void)?
+#endif
 }
